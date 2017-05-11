@@ -1,0 +1,1 @@
+angular.module('usuario.delete.module',['usuario.delete.controller']);

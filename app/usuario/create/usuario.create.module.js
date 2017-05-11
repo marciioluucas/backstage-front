@@ -1,0 +1,1 @@
+angular.module('usuario.create.module',['usuario.create.controller']);

@@ -1,0 +1,1 @@
+angular.module('usuario.retreave.module',['usuario.retreave.controller']);

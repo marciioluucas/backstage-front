@@ -1,0 +1,1 @@
+angular.module('usuario.login.module',['usuario.login.controller', 'usuario.login.service']);

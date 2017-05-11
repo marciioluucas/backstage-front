@@ -1,0 +1,7 @@
+<md-list flex ng-controller="menuCtrl" ng-cloak>
+    <md-list-item ng-repeat="menu in menus" class="secondary-button-padding" ui-sref="{{menu.link}}">
+        <i class="material-icons" layout-padding>{{menu.icon}}</i>
+        <p >{{ menu.title }}</p>
+    </md-list-item>
+</md-list>
+

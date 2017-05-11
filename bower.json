@@ -1,0 +1,15 @@
+{
+  "name": "Backstage-platform-front",
+  "description": "TESTE",
+  "version": "0.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.4",
+    "angular-route": "~1.6.4",
+    "angular-loader": "~1.6.4",
+    "angular-mocks": "~1.6.4",
+    "html5-boilerplate": "^5.3.0"
+  }
+}

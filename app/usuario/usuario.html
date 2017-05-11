@@ -1,0 +1,25 @@
+<div ng-cloak flex="100">
+    <span class="md-headline">Usuário</span>
+    <md-divider></md-divider>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Pesquisa"
+                    ui-sref-active="active"
+                    ui-sref="in.usuario.pesquisa">
+                <md-content class="md-padding">
+                    <div id="pesquisa" flex="100" ui-view="pesquisar"></div>
+                </md-content>
+            </md-tab>
+            <md-tab label="Cadastros"
+
+                    ui-sref-active="active"
+                    ui-sref="in.usuario.cadastrar">
+                <md-content>
+                    <div id="cadastro" flex="100" ui-view="cadastro"></div>
+                </md-content>
+
+            </md-tab>
+
+        </md-tabs>
+    </md-content>
+</div>

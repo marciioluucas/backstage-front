@@ -1,0 +1,1 @@
+angular.module('usuario.update.module',['usuario.update.controller']);
