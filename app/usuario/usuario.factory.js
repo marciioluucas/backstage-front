@@ -11,8 +11,9 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
         return $resource(apiUrl+ "/usuario");
     };
 
-    var _add = function () {
-        return $resource("https://glacial-brook-80493.herokuapp.com/alunos.json");
+    var _add = function (params) {
+        alert(apiUrl+ "/usuario/?"+params);
+        return $resource(apiUrl+ "/usuario/?"+params);
     };
 
     var _update = function (id, values) {
@@ -26,5 +27,5 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
         add: _add,
         update: _update,
         destroy: _destroy
-    }
+    };
 }]);
