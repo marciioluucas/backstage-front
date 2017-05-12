@@ -6,7 +6,9 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
 
     var _get = function (params) {
         if(params !== null){
-            return $resource(apiUrl+ "/usuario/?"+params);
+
+            alert(apiUrl+ "/usuario/?"+params.join('&'));
+            return $resource(apiUrl+ "/usuario/?"+params.join('&'));
         }
         return $resource(apiUrl+ "/usuario");
     };

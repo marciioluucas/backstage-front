@@ -2,25 +2,25 @@ var usuarioRetreaveController = angular.module('usuario.retreave.controller', []
 
 usuarioRetreaveController.controller('usuarioRetreaveCtrl',
     ['$scope', 'usuarioFactory', function ($scope, usuarioFactory, $mdToast) {
-        var params = '';
-
-
-
         $scope.confTabela = {};
 
         $scope.buscar = function () {
 
-            if ($scope.nome !== undefined) {
-                params = "nome=" + $scope.nome;
+            var params = [];
+            if ($scope.nome !== undefined && $scope.nome !== '') {
+                params.push("nome=" + $scope.nome);
             }
-            if ($scope.email !== undefined) {
-                params += "&email=" + $scope.email;
+            if ($scope.email !== undefined  && $scope.email !== '') {
+                params.push("email=" + $scope.email);
             }
-            if ($scope.matricula !== undefined) {
-                params += "&matricula=" + $scope.matricula;
+            if ($scope.matricula !== undefined && $scope.matricula !== '') {
+                params.push("matricula=" + $scope.matricula);
             }
-           $scope.users = usuarioFactory.get(params).query(function () {
+            if ($scope.login !== undefined  && $scope.login !== '') {
+                params.push("login=" + $scope.login);
+            }
 
+           $scope.users = usuarioFactory.get(params).query(function () {
             });
         };
 

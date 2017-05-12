@@ -1,6 +1,55 @@
-<div ng-controller="usuarioRetreaveCtrl">
-    <input type="text" ng-model="nome" placeholder="nome">
-    <button ng-click="buscar()">Pesquisar</button>
+<div ng-controller="usuarioRetreaveCtrl" layout="column">
+    <md-content layout-padding="">
+        <form name="consultaUsuarioForm">
+
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="60">
+                    <label>Nome</label>
+                    <input md-maxlength="80" name="nome" ng-model="nome">
+                    <div ng-messages="consultaUsuarioForm.nome.$error">
+                        <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="40">
+                    <label>E-mail</label>
+                    <input md-maxlength="100" type="text" name="email"
+                           ng-model="email"/>
+                    <div ng-messages="consultaUsuarioForm.email.$error">
+                        <div ng-message="md-maxlength">O email não pode conter mais que 100 caracteres.</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="30">
+                    <label>Nível</label>
+                    <md-select name="nivel" ng-model="nivel">
+                        <!--NG-REPEAT AQUI PARA FAZER OS NIVEIS-->
+                        <md-option value="1" selected="">Comum</md-option>
+                        <md-option value="2">Programador</md-option>
+                        <md-option value="3">Tutor</md-option>
+                        <md-option value="4">Administrador</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="35">
+                    <label>Matrícula</label>
+                    <input name="matricula" ng-model="matricula">
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="35">
+                    <label>Login</label>
+                    <input name="login" ng-model="login">
+                </md-input-container>
+
+            </div>
+
+            <div>
+                <md-button type="submit" class="md-button" ng-click="buscar()">Pesquisar</md-button>
+            </div>
+        </form>
+
     <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
 
     <table>
