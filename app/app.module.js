@@ -7,4 +7,4 @@ angular.module("backstage",
         "mdDataTable"
     ]
 );
-const apiUrl = "http://192.169.0.169/backstage-platform/api";
+const apiUrl = "http://localhost/backstage-platform/api";

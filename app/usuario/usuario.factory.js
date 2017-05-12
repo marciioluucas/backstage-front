@@ -12,7 +12,6 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
     };
 
     var _add = function (params) {
-        alert(apiUrl+ "/usuario/?"+params);
         return $resource(apiUrl+ "/usuario/?"+params);
     };
 

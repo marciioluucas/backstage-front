@@ -1,0 +1,1 @@
+angular.module('app.toast.module',['app.toast.factory']);
