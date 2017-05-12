@@ -1,6 +1,7 @@
 var usuarioCreateController = angular.module('usuario.create.controller', []);
 
-usuarioCreateController.controller('usuarioCreateCtrl', ['$scope', 'usuarioFactory', '$backstageToast',
+usuarioCreateController.controller('usuarioCreateCtrl',
+    ['$scope', 'usuarioFactory', '$backstageToast',
 
     function ($scope, usuarioFactory, $backstageToast) {
 

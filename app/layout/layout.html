@@ -1,7 +1,7 @@
 <header ng-controller="layoutCtrl" layout="row" ng-cloak>
     <nav ui-view="layout@toolbar" flex="100"></nav>
 </header>
-<div layout="row">
-    <nav ui-view="layout@sidenav" flex-gt-md="20"></nav>
+<div layout="row" style="height: 90%">
+    <nav ui-view="layout@sidenav" flex-gt-md="20" ></nav>
     <main layout="row" ui-view="layout@content" flex="100" flex-gt-md="80" layout-padding="" ></main>
 </div>

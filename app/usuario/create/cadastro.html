@@ -1,22 +1,23 @@
 <div ng-controller="usuarioCreateCtrl" layout="column" ng-cloak>
 
     <md-content layout-padding="">
-        <form name="projectForm" >
+        <form name="projectForm">
 
-            <div layout="row">
-            <md-input-container flex="60">
-                <label>Nome</label>
-                <input md-maxlength="80" required name="nome" ng-model="usuario.nome">
-                <div ng-messages="projectForm.nome.$error">
-                    <div ng-message="required">O nome é requirido.</div>
-                    <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
-                </div>
-            </md-input-container>
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="60">
+                    <label>Nome</label>
+                    <input md-maxlength="80" required name="nome" ng-model="usuario.nome">
+                    <div ng-messages="projectForm.nome.$error">
+                        <div ng-message="required">O nome é requirido.</div>
+                        <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
+                    </div>
+                </md-input-container>
 
-                <md-input-container flex="40">
+                <md-input-container flex-gt-sm="40">
                     <label>E-mail</label>
-                    <input md-maxlength="100" md-minlength="10" required type="email" name="email" ng-model="usuario.email"
-                           minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <input md-maxlength="100" md-minlength="10" required type="email" name="email"
+                           ng-model="usuario.email"
+                           minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
 
                     <div ng-messages="projectForm.email.$error" role="alert">
                         <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
@@ -27,15 +28,15 @@
                 </md-input-container>
             </div>
 
-            <div layout="row">
-                <md-input-container flex="40">
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="40">
                     <label>Senha</label>
                     <input required type="password" name="senha" ng-model="usuario.senha">
                     <div ng-messages="projectForm.senha.$error">
                         <div ng-message="required">A senha é requerida.</div>
                     </div>
                 </md-input-container>
-                <md-input-container flex="25">
+                <md-input-container flex-gt-sm="25">
                     <label>Nível</label>
                     <md-select name="nivel" ng-model="usuario.nivel" required>
                         <!--NG-REPEAT AQUI PARA FAZER OS NIVEIS-->
@@ -46,7 +47,7 @@
                     </md-select>
                 </md-input-container>
 
-                <md-input-container flex="35">
+                <md-input-container flex-gt-sm="35">
                     <label>Matrícula</label>
                     <input name="matricula" ng-model="usuario.matricula">
                 </md-input-container>

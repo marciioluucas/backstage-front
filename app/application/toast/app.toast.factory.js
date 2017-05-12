@@ -8,8 +8,8 @@ angular.module('app.toast.factory', [])
                "<md-toast>" +
                "<span class='md-toast-text' flex>" + text + "</span>" +
                "<i class='material-icons'>" + icon + "</i>" +
-               "</md-toast>",
-               position: 'top right'
+               "</md-toast>"
+
            });
         }
     };
