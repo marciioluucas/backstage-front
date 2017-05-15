@@ -9,8 +9,23 @@ menuController.controller('menuCtrl', ['$scope',function ($scope) {
             link: 'in.dashboard'
         },
         {
-            title: 'Usuario',
+            title: 'Usuarios',
             icon: 'person',
+            link: 'in.usuario.pesquisa'
+        },
+        {
+            title: 'Projetos',
+            icon: 'check',
+            link: 'in.usuario.pesquisa'
+        },
+        {
+            title: 'Equipes',
+            icon: 'group',
+            link: 'in.usuario.pesquisa'
+        },
+        {
+            title: 'Rankings',
+            icon: 'menu',
             link: 'in.usuario.pesquisa'
         }
     ];

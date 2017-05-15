@@ -5,7 +5,6 @@ usuarioCreateController.controller('usuarioCreateCtrl',
 
     function ($scope, usuarioFactory, $backstageToast) {
 
-
         var params = '';
 
         $scope.enviar = function () {
@@ -41,7 +40,7 @@ usuarioCreateController.controller('usuarioCreateCtrl',
                 },
 
                 function (error) {
-                    console.log("ERRO: " + error)
+                    console.log("ERRO: " + error);
                 }
             );
         }

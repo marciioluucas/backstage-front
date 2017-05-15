@@ -9,7 +9,6 @@ angular.module('app.toast.factory', [])
                "<span class='md-toast-text' flex>" + text + "</span>" +
                "<i class='material-icons'>" + icon + "</i>" +
                "</md-toast>"
-
            });
         }
     };

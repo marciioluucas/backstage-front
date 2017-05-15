@@ -1,0 +1,15 @@
+<md-dialog aria-label="{{nomeDialog}}">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{nomeDialog}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">exit</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            {{conteudo}}
+        </md-dialog-content>
+</md-dialog>

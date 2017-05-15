@@ -1,13 +1,13 @@
-<div ng-controller="usuarioCreateCtrl" layout="column" ng-cloak>
+<div ng-controller="usuarioUpdateCtrl" layout="column" ng-cloak>
 
     <md-content layout-padding="">
-        <form name="projectForm">
+        <form name="formUpdateUsuario">
 
             <div layout-gt-sm="row">
                 <md-input-container flex-gt-sm="60">
                     <label>Nome</label>
                     <input md-maxlength="80" required name="nome" ng-model="usuario.nome">
-                    <div ng-messages="projectForm.nome.$error">
+                    <div ng-messages="formUpdateUsuario.nome.$error">
                         <div ng-message="required">O nome é requirido.</div>
                         <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
                     </div>
@@ -19,7 +19,7 @@
                            ng-model="usuario.email"
                            minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
 
-                    <div ng-messages="projectForm.email.$error" role="alert">
+                    <div ng-messages="formUpdateUsuario.email.$error" role="alert">
                         <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
                             Um e-mail tem que se parecer com um e-mail e ter entre 10 e 100 caracteres.
                         </div>
@@ -32,7 +32,7 @@
                 <md-input-container flex-gt-sm="40">
                     <label>Senha</label>
                     <input required type="password" name="senha" ng-model="usuario.senha">
-                    <div ng-messages="projectForm.senha.$error">
+                    <div ng-messages="formUpdateUsuario.senha.$error">
                         <div ng-message="required">A senha é requerida.</div>
                     </div>
                 </md-input-container>
@@ -57,7 +57,7 @@
                 <md-checkbox name="tos" required>
                     Eu aceito com os termos de serviço.
                 </md-checkbox>
-                <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+                <div ng-messages="formUpdateUsuario.tos.$error" multiple md-auto-hide="false">
                     <div ng-message="required">
                         Os termos devem ser aceitos.
                     </div>
@@ -65,7 +65,7 @@
             </md-input-container>
 
             <div>
-                <md-button type="submit" class="md-raised md-primary" ng-click="enviar()">Enviar</md-button>
+                <md-button type="submit" ng-click="enviar()">Enviar</md-button>
             </div>
         </form>
     </md-content>
