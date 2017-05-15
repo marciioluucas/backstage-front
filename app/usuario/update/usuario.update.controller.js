@@ -1,27 +1,27 @@
 var usuarioUpdateController = angular.module('usuario.update.controller', []);
 
 usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
-    , 'usuarioFactory', '$backstageToast', '$backstageDialog', '$stateParams',
+    , 'usuarioFactory', '$backstageToast', '$backstageDialog', '$state',
 
-    function ($scope, usuarioFactory, $backstageToast, $backstageDialog,$stateParams) {
+    function ($scope, usuarioFactory, $backstageToast, $backstageDialog, $state) {
 
-        $scope.editar = function (evento) {
-            resgatarInfos($stateParams.id);
-            $backstageDialog.addConteudo('app/usuario/update/alterar.html');
-            $backstageDialog.addController('usuarioUpdateCtrl');
-            $backstageDialog.addTitulo('Alteração de usuário');
-            $backstageDialog.renderDialog(evento, 'app/usuario/update/alterar.html', 'Alteração de usuário')
-
-        };
         var params = [];
+        var usuario = {};
+        var id = null;
+        angular.element(document).ready(function () {
+            params.push("pk_usuario=" + $state.params.id);
+            usuarioFactory.get(params).get()
+                .$promise.then(
+                    function (value) {
+                        console.log(value);
+                        return value;
+                    },
 
-         function resgatarInfos(id) {
-            params.push("pk_usuario=" + id);
-           var t = usuarioFactory.get(params).get();
-           $scope.nome = t.nome;
-           console.log($scope.nome);
-
-        }
+                    function (error) {
+                        console.log("ERRO: " + error);
+                    }
+                );
+        });
 
         $scope.enviar = function () {
 
@@ -57,4 +57,5 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
                 }
             );
         }
-    }]);
+    }])
+;

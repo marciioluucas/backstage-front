@@ -22,7 +22,7 @@ usuarioRoutes.config(function ($stateProvider) {
                 views: {
                     "cadastro": {
                         templateUrl: "app/usuario/create/cadastro.html",
-                        controller : 'dashboardCtrl'
+                        controller: 'dashboardCtrl'
                     }
                 }
             })
@@ -34,8 +34,7 @@ usuarioRoutes.config(function ($stateProvider) {
                 controller: 'usuarioUpdateCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/usuario/retreave/retreave.html",
-                        controller: 'usuarioRetreaveCtrl'
+                        templateUrl: "app/usuario/retreave/retreave.html"
                     }
                 }
             })
