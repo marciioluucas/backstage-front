@@ -26,4 +26,17 @@ usuarioRoutes.config(function ($stateProvider) {
                     }
                 }
             })
+
+        .state('in.usuario.alterar',
+            {
+                parent: 'in.usuario',
+                url: '/alterar/{id}/',
+                controller: 'usuarioUpdateCtrl',
+                views: {
+                    "pesquisar": {
+                        templateUrl: "app/usuario/retreave/retreave.html",
+                        controller: 'usuarioRetreaveCtrl'
+                    }
+                }
+            })
 });

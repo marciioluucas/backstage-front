@@ -1,7 +1,7 @@
-<md-dialog aria-label="{{nomeDialog}}">
+<md-dialog aria-label="{{titulo}}" ng-controller="dialogCtrl">
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>{{nomeDialog}}</h2>
+                <h2>{{titulo}}</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <i class="material-icons">exit</i>
@@ -9,7 +9,7 @@
             </div>
         </md-toolbar>
 
-        <md-dialog-content>
-            {{conteudo}}
+        <md-dialog-content dynamic-ctrl="controller">
+            <div ng-include="conteudo"></div>
         </md-dialog-content>
 </md-dialog>

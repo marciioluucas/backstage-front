@@ -1,11 +1,11 @@
 angular.module('app.dialog.factory', [])
-    .factory('$backstageDialog', ['$scope', '$mdDialog', 'dialogCtrl', function ($scope, $mdDialog, dialogCtrl) {
+    .factory('$backstageDialog', ['$mdDialog', function ($mdDialog, dialogCtrl) {
         var dialog = {};
         return {
-            renderDialog: function (ev) {
+            renderDialog: function (ev, conteudo, titulo) {
                 $mdDialog.show({
                     controller: dialogCtrl,
-                    templateUrl: 'app/application/dialog.html',
+                    templateUrl: 'app/application/dialog/dialog.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     clickOutsideToClose: true
@@ -13,6 +13,9 @@ angular.module('app.dialog.factory', [])
             },
             addTitulo : function (titulo) {
                 dialog.titulo = titulo;
+            },
+            addController : function (controller) {
+                dialog.controller = controller;
             },
             addConteudo : function(conteudo) {
                 dialog.conteudo = conteudo;

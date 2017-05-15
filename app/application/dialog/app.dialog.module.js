@@ -1,3 +1,1 @@
-/**
- * Created by lukee on 5/12/17.
- */
+angular.module('app.dialog.module', ['app.dialog.controller', 'app.dialog.factory']);

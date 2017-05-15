@@ -50,28 +50,35 @@
             </div>
         </form>
 
-    <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
+        <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
 
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Matrícula</th>
-        </tr>
-        </thead>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Matrícula</th>
+            </tr>
+            </thead>
 
-        <tbody>
-        <tr ng-repeat="u in users">
-            <td>{{u.pk_usuario}}</td>
-            <td>{{u.nome}}</td>
-            <td>{{u.email}}</td>
-            <td>{{u.matricula}}</td>
-        </tr>
+            <tbody>
+            <tr ng-repeat="u in users">
+                <td>{{u.pk_usuario }}</td>
+                <td>{{u.nome}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.matricula}}</td>
+                <td ng-controller="usuarioUpdateCtrl">
+                    <md-button class="md-raised md-primary"
+                               ui-sref="in.usuario.alterar({id: u.pk_usuario})"
+                               ng-click="editar($event)">
+                        <i class="material-icons">mode_edit</i>
+                    </md-button>
+                </td>
+            </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 </div>
 <!--paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"-->
 <!--mdt-row-paginator="paginatorCallback(page, pageSize)"-->
