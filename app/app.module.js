@@ -6,4 +6,4 @@ angular.module("backstage",
         "app.directives"
     ]
 );
-const apiUrl = "http://localhost/backstage-platform/api";
+const apiUrl = "http://192.168.0.169/backstage-platform/api";

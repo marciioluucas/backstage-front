@@ -7,20 +7,27 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
 
         var params = [];
         var usuario = {};
+        $scope.usuario = {};
+
         var id = null;
         angular.element(document).ready(function () {
             params.push("pk_usuario=" + $state.params.id);
-            usuarioFactory.get(params).get()
-                .$promise.then(
-                    function (value) {
-                        console.log(value);
-                        return value;
-                    },
+            var us = usuarioFactory.get(params).get({}, function (data) {
+                $scope.usuario.nome = data.nome;
+                $scope.usuario = {
+                    pk_usuario: data.pk_usuario,
+                    nome: data.nome,
+                    email: data.email,
+                    matricula: data.matricula,
+                    nivel: data.nivel,
+                    login: data.login,
+                    senha: data.senha
+                };
+                console.log(data);
+            });
 
-                    function (error) {
-                        console.log("ERRO: " + error);
-                    }
-                );
+            $scope.usuario.nome = us.nome;
+            $scope.usuario.email = us.email;
         });
 
         $scope.enviar = function () {

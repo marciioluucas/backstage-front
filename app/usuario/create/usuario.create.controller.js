@@ -34,8 +34,8 @@ usuarioCreateController.controller('usuarioCreateCtrl',
 
             usuarioFactory.add(encodeURI(params)).save()
                 .$promise.then(
-
                 function (value) {
+
                     return $backstageToast.come(value.extra.icone,value.message);
                 },
 
