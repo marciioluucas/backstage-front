@@ -38,4 +38,15 @@ usuarioRoutes.config(function ($stateProvider) {
                     }
                 }
             })
+        .state('in.usuario.excluir',
+            {
+                parent: 'in.usuario',
+                url: '/excluir/{id}/',
+                controller: 'usuarioDeleteCtrl',
+                views: {
+                    "pesquisar": {
+                        templateUrl: "app/usuario/retreave/retreave.html"
+                    }
+                }
+            })
 });

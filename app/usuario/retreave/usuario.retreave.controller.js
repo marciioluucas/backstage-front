@@ -28,7 +28,7 @@ usuarioRetreaveController.controller('usuarioRetreaveCtrl',
                     params.push("login=" + $scope.login);
                 }
 
-                $scope.users = usuarioFactory.get(params).query(function () {
+                    $scope.users = usuarioFactory.get(params).query(function () {
                     $scope.mostrarTabela = true;
                     $scope.mostrarProgress = false;
                 });

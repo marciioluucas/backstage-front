@@ -2,7 +2,7 @@ angular.module('app.dialog.factory', [])
     .factory('$backstageDialog', ['$mdDialog', function ($mdDialog, dialogCtrl) {
         var dialog = {};
         return {
-            renderDialog: function (ev, conteudo, titulo) {
+            renderDialog: function (ev) {
                 $mdDialog.show({
                     controller: dialogCtrl,
                     templateUrl: 'app/application/dialog/dialog.html',
@@ -11,16 +11,32 @@ angular.module('app.dialog.factory', [])
                     clickOutsideToClose: true
                 });
             },
-            addTitulo : function (titulo) {
+            renderConfirmDialog: function
+                (ev, title, text, aria, okLabel, cancelLabel, qndConfirma, qndCancela) {
+                var confirm = $mdDialog.confirm()
+                    .title(title)
+                    .textContent(text)
+                    .ariaLabel(aria)
+                    .targetEvent(ev)
+                    .ok(okLabel)
+                    .cancel(cancelLabel);
+                $mdDialog.show(confirm).then(function () {
+                    qndConfirma();
+                }, function() {
+                    qndCancela();
+                })
+
+            },
+            addTitulo: function (titulo) {
                 dialog.titulo = titulo;
             },
-            addController : function (controller) {
+            addController: function (controller) {
                 dialog.controller = controller;
             },
-            addConteudo : function(conteudo) {
+            addConteudo: function (conteudo) {
                 dialog.conteudo = conteudo;
             },
-            getDialog: function() {
+            getDialog: function () {
                 return dialog;
             }
         };

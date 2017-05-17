@@ -59,6 +59,8 @@
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Matrícula</th>
+                <th>Editar</th>
+                <th>Excluir</th>
             </tr>
             </thead>
 
@@ -72,8 +74,19 @@
                 <td>
                     <md-button class="md-raised md-primary"
                                ui-sref="in.usuario.alterar({id: u.pk_usuario})"
-                               ng-click="editar($event)" >
-                        <i class="material-icons" layout="center center">mode_edit</i>
+                               ng-click="editar($event)">
+                        <md-icon>
+                            <i class="material-icons">mode_edit</i>
+                        </md-icon>
+                    </md-button>
+                </td>
+                <td ng-controller="usuarioDeleteCtrl">
+                    <md-button class="md-raised md-warn"
+                               ui-sref="in.usuario.excluir({id: u.pk_usuario})"
+                               ng-click="excluir($event)">
+                        <md-icon>
+                            <i class="material-icons">delete</i>
+                        </md-icon>
                     </md-button>
                 </td>
             </tr>
