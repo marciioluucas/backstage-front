@@ -51,8 +51,8 @@
         </form>
 
         <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
-
-        <table>
+        <md-progress-linear md-mode="indeterminate" ng-show="mostrarProgress"></md-progress-linear>
+        <table ng-show="mostrarTabela">
             <thead>
             <tr>
                 <th>ID</th>
@@ -63,16 +63,17 @@
             </thead>
 
             <tbody>
+
             <tr ng-repeat="u in users">
                 <td>{{u.pk_usuario }}</td>
                 <td>{{u.nome}}</td>
                 <td>{{u.email}}</td>
                 <td>{{u.matricula}}</td>
-                <td >
+                <td>
                     <md-button class="md-raised md-primary"
                                ui-sref="in.usuario.alterar({id: u.pk_usuario})"
-                               ng-click="editar($event)">
-                        <i class="material-icons">mode_edit</i>
+                               ng-click="editar($event)" >
+                        <i class="material-icons" layout="center center">mode_edit</i>
                     </md-button>
                 </td>
             </tr>

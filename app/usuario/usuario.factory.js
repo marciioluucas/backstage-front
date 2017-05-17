@@ -6,7 +6,6 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
 
     var _get = function (params) {
         if(params !== null){
-            console.log(apiUrl+ "/usuario/?"+params.join('&'));
             return $resource(apiUrl+ "/usuario/?"+params.join('&'));
         }
 
@@ -14,12 +13,14 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
     };
 
     var _add = function (params) {
-        console.log(apiUrl+ "/usuario/?"+params);
-        return $resource(apiUrl+ "/usuario/?"+params);
+        return $resource(apiUrl+ "/usuario/?"+params.join('&'));
     };
 
     var _update = function (params) {
-        return $resource(apiUrl+ "/usuario/?"+params);
+        return $resource(apiUrl+ "/usuario/?"+params.join('&'), {},
+            {
+                update: {method: 'PUT'}
+            });
     };
     var _destroy = function (id) {
         return $resource("https://glacial-brook-80493.herokuapp.com/alunos/" + id + ".json");

@@ -32,29 +32,31 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
 
         $scope.enviar = function () {
 
+            console.log($scope.usuario);
+
             var params = [];
-            if (usuario.pk_usuario !== undefined) {
-                params.push("pk_usuario=" + $scope.usuario.pk_usuario);
+            if ($scope.usuario.pk_usuario !== undefined) {
+                params.push("pk_usuario=" + encodeURI($scope.usuario.pk_usuario));
             }
 
-            if (usuario.nome !== undefined) {
-                params.push("nome=" + $scope.usuario.nome);
-            }
-            if (usuario.email !== undefined) {
-                params.push("email=" + $scope.usuario.email);
-            }
-            if (usuario.matricula !== undefined) {
-                params.push("matricula=" + $scope.usuario.matricula);
-            }
-            if (usuario.senha !== undefined) {
-                params.push("senha=" + $scope.usuario.senha);
-            }
-            if (usuario.matricula !== undefined) {
-                params.push("login=" + $scope.usuario.matricula);
-            }
+            if ($scope.usuario.nome !== undefined) {
 
-            usuarioFactory.update(params).update()
-                .$promise.then(
+                params.push("nome=" + encodeURI($scope.usuario.nome));
+            }
+            if ($scope.usuario.email !== undefined) {
+                params.push("email=" + encodeURI($scope.usuario.email));
+            }
+            if ($scope.usuario.matricula !== undefined) {
+                params.push("matricula=" + encodeURI($scope.usuario.matricula));
+            }
+            if ($scope.usuario.senha !== undefined) {
+                params.push("senha=" + encodeURI($scope.usuario.senha));
+            }
+            if ($scope.usuario.matricula !== undefined) {
+                params.push("login=" + encodeURI($scope.usuario.matricula));
+            }
+            // console.log(params);
+            usuarioFactory.update(params).prototype.$update().then(
                 function (value) {
                     return $backstageToast.come(value.extra.icone, value.message);
                 },

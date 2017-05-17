@@ -43,6 +43,9 @@
                         <md-option value="3">Tutor</md-option>
                         <md-option value="4">Administrador</md-option>
                     </md-select>
+                    <div ng-messages="formUpdateUsuario.nivel.$error">
+                        <div ng-message="required">O nível é requirido.</div>
+                    </div>
                 </md-input-container>
 
                 <md-input-container flex-gt-sm="35">
@@ -63,7 +66,7 @@
             </md-input-container>
 
             <div>
-                <md-button type="submit" ng-click="teste()">Enviar</md-button>
+                <md-button ng-click="enviar()">Enviar</md-button>
             </div>
         </form>
     </md-content>
