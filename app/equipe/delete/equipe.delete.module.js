@@ -1,0 +1,1 @@
+angular.module('equipe.delete.module',['equipe.delete.controller']);
