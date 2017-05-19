@@ -1,1 +1,1 @@
-angular.module('equipe.create.module',['equipe.create.controller']);
+angular.module('equipe.create.module', ['equipe.create.controller']);

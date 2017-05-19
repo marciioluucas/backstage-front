@@ -16,17 +16,17 @@ menuController.controller('menuCtrl', ['$scope',function ($scope) {
         {
             title: 'Projetos',
             icon: 'check',
-            link: 'in.usuario.pesquisa'
+            link: 'in.projeto.pesquisa'
         },
         {
             title: 'Equipes',
             icon: 'group',
-            link: 'in.usuario.pesquisa'
+            link: 'in.equipe.pesquisa'
         },
         {
-            title: 'Rankings',
+            title: 'Propostas',
             icon: 'menu',
-            link: 'in.usuario.pesquisa'
+            link: 'in.proposta.pesquisa'
         }
     ];
 

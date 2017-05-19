@@ -62,4 +62,29 @@ layoutRoutes.config(function ($stateProvider) {
                     return {titulo: 'Dashboard'};
                 })()
             })
+
+
+        .state('in.equipe',
+            {
+                parent: 'in.home',
+                url: "equipe",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/equipe/equipe.html",
+                        controller : 'equipeCtrl'
+                    }
+                }
+            })
+
+        .state('in.proposta',
+            {
+                parent: 'in.home',
+                url: "proposta",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/equipe/proposta.html",
+                        controller : 'propostaCtrl'
+                    }
+                }
+            })
 });
