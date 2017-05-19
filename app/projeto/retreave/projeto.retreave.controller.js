@@ -33,4 +33,4 @@ projetoRetreaveController.controller('projetoRetreaveCtrl', ['$scope' ,'$projeto
 //                 $scope.mostrarProgress = false;
 //             });
 //         };
-// }]);
+}]);
