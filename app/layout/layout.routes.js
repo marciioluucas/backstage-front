@@ -82,7 +82,7 @@ layoutRoutes.config(function ($stateProvider) {
                 url: "proposta",
                 views: {
                     "navigation": {
-                        templateUrl: "app/equipe/proposta.html",
+                        templateUrl: "app/proposta/proposta.html",
                         controller : 'propostaCtrl'
                     }
                 }
