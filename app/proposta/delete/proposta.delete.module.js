@@ -1,0 +1,1 @@
+angular.module('proposta.delete.module',['proposta.delete.controller']);

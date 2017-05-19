@@ -1,0 +1,1 @@
+angular.module('proposta.update.module',['proposta.update.controller']);

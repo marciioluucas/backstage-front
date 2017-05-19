@@ -1,0 +1,1 @@
+angular.module('proposta.retreave.module',['proposta.retreave.controller']);
