@@ -24,6 +24,7 @@ menuController.controller('menuCtrl', ['$scope',function ($scope) {
             icon: 'group',
             link: 'in.equipe.pesquisa'
         },
+
         {
             title: 'Propostas',
             icon: 'menu',
