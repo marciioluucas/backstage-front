@@ -12,25 +12,23 @@ projetoRetreaveController.controller('projetoRetreaveCtrl', ['$scope' ,'$projeto
             $backstageDialog.addTitulo('Alteração de Projeto');
             $backstageDialog.renderDialog(evento, 'app/projeto/update/alterar.html', 'Alteração de Projeto')
 };
-//         $scope.buscar = function () {
-//             $scope.mostrarProgress = true;
-//             var params = [];
-//             if ($scope.titulo !== undefined && $scope.titulo !== '') {
-//                 params.push("titulo=" + $scope.titulo);
-//             }
-//             if ($scope.ativado !== undefined && $scope.ativado !== '') {
-//                 params.push("ativado=" + $scope.ativado);
-//             }
-//             if ($scope.fk_proposta !== undefined && $scope.matricula !== '') {
-//                 params.push("matricula=" + $scope.matricula);
-//             }
-//             if ($scope.login !== undefined && $scope.login !== '') {
-//                 params.push("login=" + $scope.login);
-//             }
-//
-//             $scope.projeto = usuarioFactory.get(params).query(function () {
-//                 $scope.mostrarTabela = true;
-//                 $scope.mostrarProgress = false;
-//             });
-//         };
+        $scope.buscar = function () {
+            $scope.mostrarProgress = true;
+            var params = [];
+            if ($scope.titulo !== undefined && $scope.titulo !== '') {
+                params.push("titulo=" + $scope.titulo);
+            }
+            if ($scope.ativado !== undefined && $scope.ativado !== '') {
+                params.push("ativado=" + $scope.ativado);
+            }
+            if ($scope.fk_proposta !== undefined && $scope.fk_proposta !== '') {
+                params.push("fk_proposta=" + $scope.fk_proposta);
+            }
+
+
+            $scope.projeto = projetoFactory.get(params).query(function () {
+                $scope.mostrarTabela = true;
+                $scope.mostrarProgress = false;
+            });
+        };
 }]);
