@@ -1,7 +1,8 @@
+'use strict';
 var usuarioUpdateController = angular.module('usuario.update.controller', []);
 
-usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
-    , 'usuarioFactory', '$backstageToast', '$backstageDialog', '$state',
+usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope',
+    'usuarioFactory', '$backstageToast', '$backstageDialog', '$state',
 
     function ($scope, usuarioFactory, $backstageToast, $backstageDialog, $state) {
 
@@ -12,7 +13,7 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
         var id = null;
         angular.element(document).ready(function () {
             params.push("pk_usuario=" + $state.params.id);
-            var us = usuarioFactory.get(params).get({}, function (data) {
+            var us = usuarioFactory.get(params).query({}, function (data) {
                 $scope.usuario.nome = data.nome;
                 $scope.usuario = {
                     pk_usuario: data.pk_usuario,
@@ -65,6 +66,6 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope'
                     console.log("ERRO: " + error);
                 }
             );
-        }
+        };
     }])
 ;

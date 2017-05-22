@@ -2,9 +2,45 @@
     <span class="md-headline">Dashboard</span>
     <md-divider></md-divider>
     <p>{{message}}</p>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Grafico de usuários</span>
+                    </md-card-title-text>
+                </md-card-title>
+                    <md-card-content layout="row" layout-align="center center">
+                        <div >
+                            <canvas id="doughnut" class="chart chart-doughnut chart-xs ng-isolate-scope"
+                                    chart-data="data" chart-labels="labels" width="300" height="300"
+                            ></canvas>
+                        </div>
+                    </md-card-content>
 
-    <canvas id="doughnut" class="chart chart-doughnut"
-            chart-data="data" chart-labels="labels">
-    </canvas>
+                <!--<md-card-actions layout="row" layout-align="end center">-->
+                <!--<md-button>Action 1</md-button>-->
+            </md-card>
+        </div>
+
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Grafico de propostas</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content layout="row" layout-align="center center">
+                    <div >
+                        <canvas id="bar" class="chart chart-bar"
+                                chart-data="data2" chart-labels="labels2">
+                        </canvas>
+                    </div>
+                </md-card-content>
+
+                <!--<md-card-actions layout="row" layout-align="end center">-->
+                <!--<md-button>Action 1</md-button>-->
+            </md-card>
+        </div>
+    </md-content>
 </div>
-

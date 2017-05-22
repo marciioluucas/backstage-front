@@ -9,7 +9,7 @@ usuarioRetreaveController.controller('usuarioRetreaveCtrl',
                 $backstageDialog.addConteudo('app/usuario/update/alterar.html');
                 $backstageDialog.addController('usuarioUpdateCtrl');
                 $backstageDialog.addTitulo('Alteração de usuário');
-                $backstageDialog.renderDialog(evento, 'app/usuario/update/alterar.html', 'Alteração de usuário')
+                $backstageDialog.renderDialog(evento, 'app/usuario/update/alterar.html', 'Alteração de usuário');
             };
 
 

@@ -1,1 +1,1 @@
-var dashboard = angular.module('dashboard.module', ['dashboard.controller']);
+var dashboard = angular.module('dashboard.module', ['dashboard.controller', 'dashboard.factory']);
