@@ -1,3 +1,4 @@
+'use strict';
 var usuarioFactory = angular.module('usuario.factory', ['ngResource']);
 
 usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {

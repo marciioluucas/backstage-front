@@ -1,3 +1,4 @@
+'use strict';
 var menuController = angular.module('layout.menu.controller', []);
 
 menuController.controller('menuCtrl', ['$scope',function ($scope) {

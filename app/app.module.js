@@ -1,9 +1,11 @@
+'use strict';
 angular.module("backstage",
     [
         "ngMaterial",
+        "chart.js",
         "app.routes",
         "app.modules",
         "app.directives"
     ]
 );
-const apiUrl = "http://localhost/backstage-platform/api";
+var apiUrl = "http://localhost/backstage-platform/api";

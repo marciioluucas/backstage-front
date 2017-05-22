@@ -1,3 +1,4 @@
+'use strict';
 var layoutRoutes = angular.module('layout.routes', ['ui.router']);
 layoutRoutes.config(function ($stateProvider) {
 
@@ -87,4 +88,15 @@ layoutRoutes.config(function ($stateProvider) {
                     }
                 }
             })
+        .state('in.projeto',
+            {
+                parent: 'in.home',
+                url: "projeto",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/projeto/projeto.html",
+                        controller : 'projetoCtrl'
+                    }
+                }
+            });
 });

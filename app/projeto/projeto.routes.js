@@ -1,6 +1,4 @@
-/**
- * Created by Juanes on 21/05/2017.
- */
+'use strict';
 var projetoRoutes = angular.module('projeto.routes', ['ui.router']);
 
 projetoRoutes.config(function ($stateProvider) {
@@ -51,5 +49,5 @@ projetoRoutes.config(function ($stateProvider) {
                         templateUrl: "app/projeto/retreave/retreave.html"
                     }
                 }
-            })
+            });
 });

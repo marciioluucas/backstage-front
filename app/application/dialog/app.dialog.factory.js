@@ -1,3 +1,4 @@
+'use strict';
 angular.module('app.dialog.factory', [])
     .factory('$backstageDialog', ['$mdDialog', function ($mdDialog, dialogCtrl) {
         var dialog = {};

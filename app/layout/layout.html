@@ -1,7 +1,7 @@
-<div layout="row" style="min-height: 100%">
+<div layout="row" style="min-height: 100%" ng-controller="layoutCtrl">
     <nav ui-view="layout@sidenav" flex-gt-md="20" style="height: 80%"></nav>
     <section layout="column" flex-gt-md="80">
-        <header ng-controller="layoutCtrl" layout="row" ng-cloak>
+        <header  layout="row" ng-cloak>
             <nav ui-view="layout@toolbar" flex="100"></nav>
         </header>
         <main layout="row" ui-view="layout@content" flex-gt-md="100" layout-padding=""></main>

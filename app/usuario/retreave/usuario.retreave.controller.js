@@ -1,3 +1,4 @@
+'use strict';
 var usuarioRetreaveController = angular.module('usuario.retreave.controller', []);
 
 usuarioRetreaveController.controller('usuarioRetreaveCtrl',

@@ -1,9 +1,7 @@
-/**
- * Created by juane on 19/05/2017.
- */
+'use strict';
 var projetoFactory = angular.module('projeto.factory',['ngResource']);
 
-projetoFactory.factory('projetoFactory',[$resource, function ($resource) {
+projetoFactory.factory('projetoFactory',['$resource', function ($resource) {
 
     var _get = function (params) {
         if (params !== null) {

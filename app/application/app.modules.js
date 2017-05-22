@@ -1,6 +1,7 @@
 angular.module("app.modules",
     [
         "layout.module",
+        "help.module",
         "usuario.module",
         "equipe.module",
         "proposta.module",
