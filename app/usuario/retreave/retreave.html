@@ -55,6 +55,7 @@
         <table ng-show="mostrarTabela">
             <thead>
             <tr>
+                <th>#</th>
                 <th>ID</th>
                 <th>Nome</th>
                 <th>E-mail</th>
@@ -66,7 +67,8 @@
 
             <tbody>
 
-            <tr ng-repeat="u in users">
+            <tr ng-repeat="u in users" id="{{$index}}">
+                <td>{{$index}}</td>
                 <td>{{u.pk_usuario }}</td>
                 <td>{{u.nome}}</td>
                 <td>{{u.email}}</td>
@@ -83,7 +85,7 @@
                 <td ng-controller="usuarioDeleteCtrl">
                     <md-button class="md-raised md-warn"
                                ui-sref="in.usuario.excluir({id: u.pk_usuario})"
-                               ng-click="excluir($event)">
+                               ng-click="excluir($event, $index)">
                         <md-icon>
                             <i class="material-icons">delete</i>
                         </md-icon>

@@ -6,7 +6,7 @@ usuarioDeleteController.controller('usuarioDeleteCtrl',
         var params = [];
 
 
-        $scope.excluir = function (evento) {
+        $scope.excluir = function (evento, index) {
             angular.element(document).ready(function () {
 
                 params.push("pk_usuario=" + $state.params.id);
@@ -24,6 +24,7 @@ usuarioDeleteController.controller('usuarioDeleteCtrl',
                     usuarioFactory.destroy(params).remove()
                         .$promise.then(
                         function (value) {
+                            document.getElementById(index).style.property.display = 'none';
                             return $backstageToast.come(value.extra.icone, value.message);
                         },
 

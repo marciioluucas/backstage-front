@@ -13,7 +13,10 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope',
         var id = null;
         angular.element(document).ready(function () {
             params.push("pk_usuario=" + $state.params.id);
-            var us = usuarioFactory.get(params).query({}, function (data) {
+            params.push("method=retreaveParaAlterar");
+
+            var us = usuarioFactory.get(params).get({}, function (data) {
+
                 $scope.usuario.nome = data.nome;
                 $scope.usuario = {
                     pk_usuario: data.pk_usuario,
@@ -24,9 +27,8 @@ usuarioUpdateController.controller('usuarioUpdateCtrl', ['$scope',
                     login: data.login,
                     senha: data.senha
                 };
-                console.log(data);
             });
-
+            console.log(us);
             $scope.usuario.nome = us.nome;
             $scope.usuario.email = us.email;
         });
