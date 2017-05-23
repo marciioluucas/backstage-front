@@ -5,6 +5,5 @@ var projetoModule = angular.module('projeto.module', [
         "projeto.delete.module",
         "projeto.controller",
         "projeto.routes",
-        'projeto.factory'
-    
+        "projeto.factory"
     ]);
