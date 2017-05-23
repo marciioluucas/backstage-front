@@ -1,7 +1,7 @@
-'use strict';
-var projetoFactory = angular.module('projeto.factory',['ngResource']);
+var projetoFactory = angular.module('projeto.factory', ['ngResource']);
 
-projetoFactory.factory('projetoFactory',['$resource', function ($resource) {
+projetoFactory.factory('projetoFactory', ['$resource', function ($resource) {
+
 
     var _get = function (params) {
         if (params !== null) {
@@ -31,5 +31,4 @@ projetoFactory.factory('projetoFactory',['$resource', function ($resource) {
         update: _update,
         destroy: _destroy
     };
-
-}])
+}]);

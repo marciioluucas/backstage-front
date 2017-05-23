@@ -94,8 +94,8 @@ layoutRoutes.config(function ($stateProvider) {
                 url: "projeto",
                 views: {
                     "navigation": {
-                        templateUrl: "app/projeto/projeto.html",
-                        controller : 'projetoCtrl'
+                        templateUrl: "app/projeto/projeto.html"
+                        // controller : 'projetoCtrl'
                     }
                 }
             });

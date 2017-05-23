@@ -1,4 +1,3 @@
-'use strict';
 var projetoRoutes = angular.module('projeto.routes', ['ui.router']);
 
 projetoRoutes.config(function ($stateProvider) {
@@ -23,7 +22,7 @@ projetoRoutes.config(function ($stateProvider) {
                 views: {
                     "cadastro": {
                         templateUrl: "app/projeto/create/cadastro.html",
-                        controller: 'dashboardCtrl'
+                        controller: 'projetoCreateCtrl'
                     }
                 }
             })
@@ -49,5 +48,5 @@ projetoRoutes.config(function ($stateProvider) {
                         templateUrl: "app/projeto/retreave/retreave.html"
                     }
                 }
-            });
+            })
 });

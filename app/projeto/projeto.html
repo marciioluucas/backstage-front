@@ -1,18 +1,22 @@
-<div ng-cloak flex ="100">
+<div ng-cloak flex="100">
     <span class="md-headline">Projeto</span>
     <md-divider></md-divider>
     <md-content>
-        <md-tabs>
-            <md-tab label="Pesquisa" ui-sref="in.projeto.pesquisa">
-            <md-content class="md-padding">
-                <div id="pesquisa" flex="100" ui-view="pesquisar"></div>
-            </md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Pesquisa"
+                    ui-sref="in.projeto.pesquisa">
+                <md-content class="md-padding">
+                    <div id="pesquisa" flex="100" ui-view="pesquisar"></div>
+                </md-content>
+            </md-tab>
+            <md-tab label="Cadastros"
+                    ui-sref="in.projeto.cadastrar">
+                <md-content>
+                    <div id="cadastro" flex="100" ui-view="cadastro"></div>
+                </md-content>
+
             </md-tab>
 
         </md-tabs>
-
-
     </md-content>
-
-
 </div>
