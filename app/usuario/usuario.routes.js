@@ -22,7 +22,7 @@ usuarioRoutes.config(function ($stateProvider) {
                 views: {
                     "cadastro": {
                         templateUrl: "app/usuario/create/cadastro.html",
-                        controller: 'dashboardCtrl'
+                        controller: 'usuarioCreateCtrl'
                     }
                 }
             })

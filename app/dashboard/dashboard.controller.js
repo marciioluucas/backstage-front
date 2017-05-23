@@ -13,10 +13,20 @@ dashboardController.controller('dashboardCtrl', ['$scope', 'dashboardFactory', f
     });
 
     $scope.labels2 = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-    $scope.series = ['Series A', 'Series B'];
 
     $scope.data2 = [
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]
+        [65, 59, 80, 81, 56, 55, 40]
+
     ];
+
+    var teste =
+        {
+           0: 15,
+           1: 625,
+           2: 25,
+           3: 11,
+           4: 10,
+           5: 6
+        };
+    //Pegar a data atual e diminuir pela index do array que veio do banco!
 }]);

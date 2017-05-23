@@ -8,4 +8,4 @@ angular.module("backstage",
         "app.directives"
     ]
 );
-var apiUrl = "http://localhost/backstage-platform/api";
+var apiUrl = "http://lukee/backstage-platform/api";
