@@ -1,0 +1,1 @@
+angular.module('comum.menu.module',['comum.menu.controller']);

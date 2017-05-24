@@ -1,0 +1,1 @@
+angular.module('comum.content.module', ['comum.content.controller']);

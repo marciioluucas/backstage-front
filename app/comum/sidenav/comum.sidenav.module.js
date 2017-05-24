@@ -1,0 +1,1 @@
+angular.module('comum.sidenav.module', ['comum.sidenav.controller']);
