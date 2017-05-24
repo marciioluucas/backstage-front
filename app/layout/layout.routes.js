@@ -9,7 +9,7 @@ layoutRoutes.config(function ($stateProvider) {
             abstract: true,
             views: {
                 '': {
-                    templateUrl: 'app/layout/layout.html'
+                    templateUrl: 'app/layout/comum.html'
                 }
             }
         })

@@ -2,10 +2,10 @@
 var comumRoutes = angular.module('comum.routes', ['ui.router']);
 comumRoutes.config(function ($stateProvider) {
 
-    $stateProvider.state('in',
+    $stateProvider.state('comum',
         {
-            name: 'in',
-            url: '/in',
+            name: 'comum',
+            url: '/comum',
             abstract: true,
             views: {
                 '': {
@@ -14,9 +14,9 @@ comumRoutes.config(function ($stateProvider) {
             }
         })
 
-        .state('in.home', {
+        .state('comum.home', {
             url: '/',
-            parent: 'in',
+            parent: 'comum',
             views: {
                 'comum@toolbar': {
                     templateUrl: 'app/comum/toolbar/toolbar.html'
@@ -33,9 +33,9 @@ comumRoutes.config(function ($stateProvider) {
             }
         })
 
-        .state('in.usuario',
+        .state('comum.usuario',
             {
-                parent: 'in.home',
+                parent: 'comum.home',
                 url: "usuario",
                 views: {
                     "navigation": {
@@ -49,9 +49,9 @@ comumRoutes.config(function ($stateProvider) {
 
             })
 
-        .state('in.dashboard',
+        .state('comum.dashboard',
             {
-                parent: 'in.home',
+                parent: 'comum.home',
                 url: "dashboard",
                 views: {
                     "navigation": {
@@ -65,9 +65,9 @@ comumRoutes.config(function ($stateProvider) {
             })
 
 
-        .state('in.equipe',
+        .state('comum.equipe',
             {
-                parent: 'in.home',
+                parent: 'comum.home',
                 url: "equipe",
                 views: {
                     "navigation": {
@@ -77,9 +77,9 @@ comumRoutes.config(function ($stateProvider) {
                 }
             })
 
-        .state('in.proposta',
+        .state('comum.proposta',
             {
-                parent: 'in.home',
+                parent: 'comum.home',
                 url: "proposta",
                 views: {
                     "navigation": {
@@ -88,9 +88,9 @@ comumRoutes.config(function ($stateProvider) {
                     }
                 }
             })
-        .state('in.projeto',
+        .state('comum.projeto',
             {
-                parent: 'in.home',
+                parent: 'comum.home',
                 url: "projeto",
                 views: {
                     "navigation": {
