@@ -1,8 +1,8 @@
 <div layout="row" style="min-height: 100%" ng-controller="comumCtrl">
-    <nav ui-view="comum@sidenav" flex-gt-md="10" style="height: 80%"></nav>
-    <section layout="column" flex-gt-md="90">
-        <header  layout="row" ng-cloak>
-            <nav ui-view="comum@toolbar" flex="100"></nav>
+    <section layout="column" flex="100" flex-gt-md="100">
+        <header  layout="column" ng-cloak>
+            <nav ui-view="comum@toolbar" flex-gt-md="100"></nav>
+            <nav ui-view="comum@sidenav" flex-gt-md="10" style="height: 80%"></nav>
         </header>
         <main layout="row" ui-view="comum@content" flex-gt-md="100" comum-padding=""></main>
     </section>

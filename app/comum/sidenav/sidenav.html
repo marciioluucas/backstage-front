@@ -1,10 +1,10 @@
-<div ng-controller="sidenavCtrl" comum="column" ng-cloak>
-    <section comum="row" flex>
+<div ng-controller="sidenavCtrl" layout="column" ng-cloak>
+    <section layout="row" flex>
         <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-is-locked-open="$mdMedia('gt-md')"
                     md-whiteframe="4">
 
             <md-toolbar class="md-theme-indigo">
-                <h1 class="md-toolbar-tools">Marcio Lucas</h1>
+                <h1 class="md-toolbar-tools">Nome da Pessoa</h1>
             </md-toolbar>
             <md-content>
                 <div ui-view="comum@menu"></div>
@@ -13,4 +13,34 @@
         </md-sidenav>
     </section>
 
+</div>
+
+<div ng-controller="sidenavCtrl" ng-cloak hide-gt-md>
+
+    <md-toolbar layout="row" ng-controller="comumToolbarCtrl">
+        <div class="md-toolbar-tools" ng-controller="sidenavCtrl">
+            <md-tabs md-stretch-tabs flex="100">
+                <md-tab
+                        ui-sref="in.usuario.pesquisa">
+                    <md-tab-label>
+                        <i class="material-icons" style="color: white">web</i>
+                    </md-tab-label>
+                </md-tab>
+
+                <md-tab
+                        ui-sref="in.usuario.pesquisa">
+                    <md-tab-label>
+                        <i class="material-icons" style="color: white">favorite</i>
+                    </md-tab-label>
+                </md-tab>
+
+                <md-tab
+                        ui-sref="in.usuario.pesquisa">
+                    <md-tab-label>
+                        <i class="material-icons" style="color: white">cloud_upload</i>
+                    </md-tab-label>
+                </md-tab>
+            </md-tabs>
+        </div>
+    </md-toolbar>
 </div>
