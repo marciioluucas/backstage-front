@@ -19,8 +19,7 @@ dashboardController.controller('dashboardCtrl', ['$scope', 'dashboardFactory', f
 
     ];
 
-    var teste =
-        {
+    var teste = {
            0: 15,
            1: 625,
            2: 25,

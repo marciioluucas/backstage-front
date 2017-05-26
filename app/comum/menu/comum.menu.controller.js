@@ -10,13 +10,13 @@ menuController.controller('menuCtrl', ['$scope',function ($scope) {
             link: 'in.dashboard'
         },
         {
-            title: 'Usuarios',
-            icon: 'person',
+            title: 'Curtir propostas',
+            icon: 'favorite',
             link: 'in.usuario.pesquisa'
         },
         {
-            title: 'Projetos',
-            icon: 'check',
+            title: 'Minhas propostas',
+            icon: 'assignment_turned_in',
             link: 'in.projeto.pesquisa'
         },
         {
