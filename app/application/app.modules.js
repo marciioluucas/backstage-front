@@ -9,6 +9,7 @@ angular.module("app.modules",
         "proposta.module",
         "app.toast.module",
         "app.dialog.module",
-        "dashboard.module"
+        "dashboard.module",
+        "welcome.module"
     ]
 );

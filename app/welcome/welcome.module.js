@@ -1,0 +1,1 @@
+var welcome = angular.module('welcome.module', ['welcome.controller', 'welcome.factory']);

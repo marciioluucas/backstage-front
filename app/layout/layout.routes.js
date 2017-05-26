@@ -9,7 +9,7 @@ layoutRoutes.config(function ($stateProvider) {
             abstract: true,
             views: {
                 '': {
-                    templateUrl: 'app/layout/comum.html'
+                    templateUrl: 'app/layout/layout.html'
                 }
             }
         })
@@ -55,7 +55,7 @@ layoutRoutes.config(function ($stateProvider) {
                 url: "dashboard",
                 views: {
                     "navigation": {
-                        templateUrl: "app/dashboard/dashboard.html",
+                        templateUrl: "app/dashboard/welcome.html",
                         controller : 'dashboardCtrl'
                     }
                 },

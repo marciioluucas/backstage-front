@@ -33,49 +33,18 @@ comumRoutes.config(function ($stateProvider) {
             }
         })
 
-        .state('comum.usuario',
+        .state('comum.welcome',
             {
                 parent: 'comum.home',
-                url: "usuario",
+                url: "welcome",
                 views: {
                     "navigation": {
-                        templateUrl: "app/usuario/usuario.html",
-                        controller: 'usuarioCtrl'
-                    }
-                },
-                data : {
-                    titulo: 'Usuario'
-                }
-
-            })
-
-        .state('comum.dashboard',
-            {
-                parent: 'comum.home',
-                url: "dashboard",
-                views: {
-                    "navigation": {
-                        templateUrl: "app/dashboard/dashboard.html",
-                        controller : 'dashboardCtrl'
-                    }
-                },
-                data : (function() {
-                    return {titulo: 'Dashboard'};
-                })()
-            })
-
-
-        .state('comum.equipe',
-            {
-                parent: 'comum.home',
-                url: "equipe",
-                views: {
-                    "navigation": {
-                        templateUrl: "app/equipe/equipe.html",
-                        controller : 'equipeCtrl'
+                        templateUrl: "app/welcome/welcome.html",
+                        controller: 'welcomeCtrl'
                     }
                 }
             })
+
 
         .state('comum.proposta',
             {
@@ -84,19 +53,10 @@ comumRoutes.config(function ($stateProvider) {
                 views: {
                     "navigation": {
                         templateUrl: "app/proposta/proposta.html",
-                        controller : 'propostaCtrl'
+                        controller: 'welcomeCtrl'
                     }
                 }
             })
-        .state('comum.projeto',
-            {
-                parent: 'comum.home',
-                url: "projeto",
-                views: {
-                    "navigation": {
-                        templateUrl: "app/projeto/projeto.html"
-                        // controller : 'projetoCtrl'
-                    }
-                }
-            });
+
+
 });
