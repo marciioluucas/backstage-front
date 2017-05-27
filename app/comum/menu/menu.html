@@ -1,7 +1,24 @@
-<md-list flex ng-controller="menuCtrl" ng-cloak>
-    <md-list-item ng-repeat="menu in menus" class="secondary-button-padding" ui-sref="{{menu.link}}">
-        <i class="material-icons" comum-padding>{{menu.icon}}</i>
-        <p >{{ menu.title }}</p>
-    </md-list-item>
-</md-list>
-
+<style>
+    @media only screen and (max-width: 1280px) {
+        .medium-hide{ display: none !important; }
+    }
+    @media only screen and (min-width: 1281px) {
+        .greather-medium-hide{ display: none !important; }
+    }
+</style>
+<div ng-controller="comumMenuCtrl">
+    <md-list ng-cloak class="medium-hide">
+        <md-list-item ng-repeat="menu in menus" class="secondary-button-padding" ui-sref="{{menu.link}}">
+            <i class="material-icons" comum-padding>{{menu.icon}}</i>
+            <p>{{ menu.title }}</p>
+        </md-list-item>
+    </md-list>
+    <md-tabs md-stretch-tabs flex="100" class="greather-medium-hide">
+        <md-tab ng-repeat="menu in menus"
+                ui-sref="{{menu.link}}">
+            <md-tab-label>
+                <i class="material-icons" style="color: white">{{menu.icon}}</i>
+            </md-tab-label>
+        </md-tab>
+    </md-tabs>
+</div>

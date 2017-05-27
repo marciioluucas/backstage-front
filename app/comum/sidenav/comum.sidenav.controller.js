@@ -1,5 +1,5 @@
 angular.module('comum.sidenav.controller', [])
-    .controller('sidenavCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+    .controller('comumSidenavCtrl', function ($scope, $timeout, $mdSidenav, $log) {
         $scope.toggleLeft = fazerAnimacaoOpen('sidenav');
 
 

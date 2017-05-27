@@ -1,4 +1,4 @@
-<div ng-controller="sidenavCtrl" layout="column" ng-cloak>
+<div ng-controller="comumSidenavCtrl" layout="column" ng-cloak>
     <section layout="row" flex>
         <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-is-locked-open="$mdMedia('gt-md')"
                     md-whiteframe="4">
@@ -15,32 +15,11 @@
 
 </div>
 
-<div ng-controller="sidenavCtrl" ng-cloak hide-gt-md>
+<div ng-controller="comumSidenavCtrl" ng-cloak hide-gt-md>
 
     <md-toolbar layout="row" ng-controller="comumToolbarCtrl">
         <div class="md-toolbar-tools" ng-controller="sidenavCtrl">
-            <md-tabs md-stretch-tabs flex="100">
-                <md-tab
-                        ui-sref="in.usuario.pesquisa">
-                    <md-tab-label>
-                        <i class="material-icons" style="color: white">dashboard</i>
-                    </md-tab-label>
-                </md-tab>
-
-                <md-tab
-                        ui-sref="in.usuario.pesquisa">
-                    <md-tab-label>
-                        <i class="material-icons" style="color: white">favorite</i>
-                    </md-tab-label>
-                </md-tab>
-
-                <md-tab
-                        ui-sref="in.usuario.pesquisa">
-                    <md-tab-label>
-                        <i class="material-icons" style="color: white">assignment_turned_in</i>
-                    </md-tab-label>
-                </md-tab>
-            </md-tabs>
+            <div ui-view="comum@menu"></div>
         </div>
     </md-toolbar>
 </div>

@@ -1,8 +1,7 @@
 'use strict';
 var menuController = angular.module('comum.menu.controller', []);
 
-menuController.controller('menuCtrl', ['$scope',function ($scope) {
-
+menuController.controller('comumMenuCtrl', ['$scope',function ($scope) {
     $scope.menus = [
         {
             title: 'Dashboard',
@@ -18,17 +17,6 @@ menuController.controller('menuCtrl', ['$scope',function ($scope) {
             title: 'Minhas propostas',
             icon: 'assignment_turned_in',
             link: 'in.projeto.pesquisa'
-        },
-        {
-            title: 'Equipes',
-            icon: 'group',
-            link: 'in.equipe.pesquisa'
-        },
-
-        {
-            title: 'Propostas',
-            icon: 'menu',
-            link: 'in.proposta.pesquisa'
         }
     ];
 
