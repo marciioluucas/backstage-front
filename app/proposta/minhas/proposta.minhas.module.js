@@ -1,0 +1,1 @@
+angular.module('proposta.minhas.module',['proposta.minhas.controller']);

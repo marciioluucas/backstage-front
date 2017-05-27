@@ -10,7 +10,7 @@ usuarioRoutes.config(function ($stateProvider) {
                 url: "/pesquisar",
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/usuario/retreave/retreave.html",
+                        templateUrl: "app/usuario/retreave/minhas.html",
                         controller: 'usuarioRetreaveCtrl'
                     }
                 }
@@ -34,7 +34,7 @@ usuarioRoutes.config(function ($stateProvider) {
                 controller: 'usuarioUpdateCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/usuario/retreave/retreave.html"
+                        templateUrl: "app/usuario/retreave/minhas.html"
                     }
                 }
             })
@@ -45,7 +45,7 @@ usuarioRoutes.config(function ($stateProvider) {
                 controller: 'usuarioDeleteCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/usuario/retreave/retreave.html"
+                        templateUrl: "app/usuario/retreave/minhas.html"
                     }
                 }
             })

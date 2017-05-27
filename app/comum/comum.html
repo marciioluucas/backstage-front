@@ -1,13 +1,21 @@
-<div layout="row" style="min-height: 100%" ng-controller="comumCtrl">
-    <section layout="column" flex="100" flex-gt-md="100">
-        <header  layout="column" ng-cloak>
-            <nav ui-view="comum@toolbar" flex-gt-md="100"></nav>
-            <nav ui-view="comum@sidenav" flex-gt-md="10" style="height: 80%"></nav>
-        </header>
-        <main layout="row" ui-view="comum@content" flex-gt-md="100" comum-padding="">
-        </main>
-        <md-button hide-gt-md class="md-fab md-fab-bottom-right docs-scroll-fab md-button md-ink-ripple" aria-label="Use Android">
-            <md-icon><i class="material-icons">add</i></md-icon>
-        </md-button>
+<div layout="column" style="min-height: 100%" ng-controller="comumCtrl">
+
+    <nav ui-view="comum@toolbar"></nav>
+
+    <section layout-gt-md="row">
+
+        <aside>
+            <nav ui-view="comum@sidenav" flex-gt-md="100"></nav>
+        </aside>
+        <main ui-view="comum@content" layout-padding="" flex="100"></main>
+        <footer style="margin-top:50px">
+            <md-button ui-sref="comum.proposta.cadastrar" hide-gt-md style="position: fixed;"
+                       class="md-fab md-fab-bottom-right md-button md-ink-ripple"
+                       aria-label="Use Android">
+                <md-icon><i class="material-icons">add</i></md-icon>
+            </md-button>
+
+        </footer>
+
     </section>
 </div>

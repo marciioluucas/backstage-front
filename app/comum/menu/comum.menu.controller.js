@@ -6,17 +6,17 @@ menuController.controller('comumMenuCtrl', ['$scope',function ($scope) {
         {
             title: 'Dashboard',
             icon: 'menu',
-            link: 'in.dashboard'
+            link: 'comum.welcome'
         },
         {
             title: 'Curtir propostas',
             icon: 'favorite',
-            link: 'in.usuario.pesquisa'
+            link: 'comum.proposta.curtir'
         },
         {
             title: 'Minhas propostas',
             icon: 'assignment_turned_in',
-            link: 'in.projeto.pesquisa'
+            link: 'comum.proposta.minhas'
         }
     ];
 

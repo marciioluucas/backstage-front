@@ -9,17 +9,12 @@
             <md-content>
                 <div ui-view="comum@menu"></div>
             </md-content>
-
         </md-sidenav>
     </section>
 
-</div>
-
-<div ng-controller="comumSidenavCtrl" ng-cloak hide-gt-md>
-
-    <md-toolbar layout="row" ng-controller="comumToolbarCtrl">
+    <md-toolbar  layout-fill layout="row" ng-controller="comumToolbarCtrl" hide-gt-md>
         <div class="md-toolbar-tools" ng-controller="sidenavCtrl">
-            <div ui-view="comum@menu"></div>
+            <div ui-view="comum@menu" style="width: 100%"></div>
         </div>
     </md-toolbar>
 </div>

@@ -10,7 +10,7 @@ propostaRoutes.config(function ($stateProvider) {
                 url: "/pesquisar",
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/proposta/retreave/retreave.html",
+                        templateUrl: "app/proposta/retreave/minhas.html",
                         controller: 'propostaRetreaveCtrl'
                     }
                 }
@@ -34,7 +34,7 @@ propostaRoutes.config(function ($stateProvider) {
                 controller: 'propostaUpdateCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/proposta/retreave/retreave.html"
+                        templateUrl: "app/proposta/retreave/minhas.html"
                     }
                 }
             })
@@ -45,7 +45,7 @@ propostaRoutes.config(function ($stateProvider) {
                 controller: 'propostaDeleteCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/proposta/retreave/retreave.html"
+                        templateUrl: "app/proposta/retreave/minhas.html"
                     }
                 }
             })

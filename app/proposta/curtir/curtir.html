@@ -1,0 +1,162 @@
+<div ng-controller="propostaCurtirCtrl" layout="column">
+    <md-content layout-padding="">
+        <form name="consultaUsuarioForm">
+
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="60">
+                    <label>Nome</label>
+                    <input md-maxlength="80" name="nome" ng-model="nome">
+                    <div ng-messages="consultaUsuarioForm.nome.$error">
+                        <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="40">
+                    <label>E-mail</label>
+                    <input md-maxlength="100" type="text" name="email"
+                           ng-model="email"/>
+                    <div ng-messages="consultaUsuarioForm.email.$error">
+                        <div ng-message="md-maxlength">O email não pode conter mais que 100 caracteres.</div>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="30">
+                    <label>Nível</label>
+                    <md-select name="nivel" ng-model="nivel">
+                        <!--NG-REPEAT AQUI PARA FAZER OS NIVEIS-->
+                        <md-option value="1" selected="">Comum</md-option>
+                        <md-option value="2">Programador</md-option>
+                        <md-option value="3">Tutor</md-option>
+                        <md-option value="4">Administrador</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="35">
+                    <label>Matrícula</label>
+                    <input name="matricula" ng-model="matricula">
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="35">
+                    <label>Login</label>
+                    <input name="login" ng-model="login">
+                </md-input-container>
+
+            </div>
+
+            <div>
+                <md-button type="submit" class="md-raised md-primary" ng-click="buscar()">Pesquisar</md-button>
+            </div>
+        </form>
+
+        <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
+        <md-progress-linear md-mode="indeterminate" ng-show="mostrarProgress"></md-progress-linear>
+        <table ng-show="mostrarTabela">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Matrícula</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr ng-repeat="u in users">
+                <td>{{u.pk_proposta }}</td>
+                <td>{{u.nome}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.matricula}}</td>
+                <td>
+                    <md-button class="md-raised md-primary"
+                               ui-sref="in.proposta.alterar({id: u.pk_proposta})"
+                               ng-click="editar($event)">
+                        <md-icon>
+                            <i class="material-icons">mode_edit</i>
+                        </md-icon>
+                    </md-button>
+                </td>
+                <td ng-controller="propostaDeleteCtrl">
+                    <md-button class="md-raised md-warn"
+                               ui-sref="in.proposta.excluir({id: u.pk_proposta})"
+                               ng-click="excluir($event)">
+                        <md-icon>
+                            <i class="material-icons">delete</i>
+                        </md-icon>
+                    </md-button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+</div>
+<!--paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"-->
+<!--mdt-row-paginator="paginatorCallback(page, pageSize)"-->
+
+<!--<mdt-table-->
+
+<!--mdt-row-paginator-error-message="Um erro ocorreu enquanto carregávamos."-->
+<!--mdt-row="{-->
+<!--'table-row-id-key': 'users.id',-->
+<!--'column-keys': [-->
+<!--'users.nome',-->
+<!--'users.email'-->
+<!--],-->
+<!--}">-->
+<!--<mdt-header-row>-->
+<!--<mdt-column align-rule="left">Nome</mdt-column>-->
+<!--<mdt-column align-rule="right">E-mail</mdt-column>-->
+<!--</mdt-header-row>-->
+<!--</mdt-table>-->
+
+<!--<md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{users.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>-->
+<!--<div class="row">-->
+<!--<form class="col s12">-->
+<!--<div class="row">-->
+<!--<div class="input-field col s6">-->
+<!--<input id="first_name" type="text">-->
+<!--<label for="first_name">Nome</label>-->
+<!--</div>-->
+<!--<div class="input-field col s6">-->
+<!--<input id="email" type="email">-->
+<!--<label for="email">Email</label>-->
+<!--</div>-->
+<!--</div>-->
+<!--</form>-->
+<!--<button class="waves-effect waves-light btn right">-->
+<!--<i class="material-icons right">search</i>-->
+<!--Pesquisar</button>-->
+
+<!--</div>-->
+<!--<div class="section"></div>-->
+<!--<table class="responsive">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th>Name</th>-->
+<!--<th>Item Name</th>-->
+<!--<th>Item Price</th>-->
+<!--</tr>-->
+<!--</thead>-->
+
+<!--<tbody>-->
+<!--<tr>-->
+<!--<td>Alvin</td>-->
+<!--<td>Eclair</td>-->
+<!--<td>$0.87</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td>Alan</td>-->
+<!--<td>Jellybean</td>-->
+<!--<td>$3.76</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td>Jonathan</td>-->
+<!--<td>Lollipop</td>-->
+<!--<td>$7.00</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
