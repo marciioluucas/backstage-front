@@ -5,10 +5,10 @@ equipeRetreaveController.controller('equipeRetreaveCtrl',
         function ($scope, equipeFactory, $backstageDialog, $state) {
             $scope.mostrarTabela = false;
             $scope.editar = function (evento) {
-                $backstageDialog.addConteudo('app/equipe/update/alterar.html');
+                $backstageDialog.addConteudo('app/equipe/update/ver.html');
                 $backstageDialog.addController('equipeUpdateCtrl');
                 $backstageDialog.addTitulo('Alteração de equipe');
-                $backstageDialog.renderDialog(evento, 'app/equipe/update/alterar.html', 'Alteração de equipe')
+                $backstageDialog.renderDialog(evento, 'app/equipe/update/ver.html', 'Alteração de equipe')
             };
 
 

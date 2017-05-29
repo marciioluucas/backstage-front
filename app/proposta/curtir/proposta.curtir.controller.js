@@ -4,11 +4,11 @@ propostaCurtirController.controller('propostaCurtirCtrl',
     ['$scope', 'propostaFactory', '$backstageDialog', '$state',
         function ($scope, propostaFactory, $backstageDialog, $state) {
             $scope.mostrarTabela = false;
-            $scope.editar = function (evento) {
-                $backstageDialog.addConteudo('app/proposta/update/alterar.html');
+            $scope.ver = function (evento) {
+                $backstageDialog.addConteudo('app/proposta/update/ver.html');
                 $backstageDialog.addController('propostaUpdateCtrl');
                 $backstageDialog.addTitulo('Alteração de proposta');
-                $backstageDialog.renderDialog(evento, 'app/proposta/update/alterar.html', 'Alteração de proposta')
+                $backstageDialog.renderDialog(evento, 'app/proposta/update/ver.html', 'Alteração de proposta')
             };
 
 

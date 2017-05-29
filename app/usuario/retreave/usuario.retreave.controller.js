@@ -6,10 +6,10 @@ usuarioRetreaveController.controller('usuarioRetreaveCtrl',
         function ($scope, usuarioFactory, $backstageDialog, $state) {
             $scope.mostrarTabela = false;
             $scope.editar = function (evento) {
-                $backstageDialog.addConteudo('app/usuario/update/alterar.html');
+                $backstageDialog.addConteudo('app/usuario/update/ver.html');
                 $backstageDialog.addController('usuarioUpdateCtrl');
                 $backstageDialog.addTitulo('Alteração de usuário');
-                $backstageDialog.renderDialog(evento, 'app/usuario/update/alterar.html', 'Alteração de usuário');
+                $backstageDialog.renderDialog(evento, 'app/usuario/update/ver.html', 'Alteração de usuário');
             };
 
 

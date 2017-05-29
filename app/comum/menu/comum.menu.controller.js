@@ -11,12 +11,12 @@ menuController.controller('comumMenuCtrl', ['$scope',function ($scope) {
         {
             title: 'Curtir propostas',
             icon: 'favorite',
-            link: 'comum.proposta.curtir'
+            link: 'comum.curtir'
         },
         {
             title: 'Minhas propostas',
             icon: 'assignment_turned_in',
-            link: 'comum.proposta.minhas'
+            link: 'comum.minhas'
         }
     ];
 

@@ -1,0 +1,25 @@
+<div layout="column" ng-cloak >
+    <md-content layout-padding="">
+        <form name="formVerUsuario">
+            <div layout-gt-sm="row">
+                <md-input-container flex-gt-sm="60">
+                    <label>Título</label>
+                    <input  name="titulo" ng-model="proposta.titulo">
+
+                </md-input-container>
+
+                <md-input-container flex-gt-sm="40">
+                    <label>Autor</label>
+                    <input type="text" name="autor" ng-model="proposta.autor"/>
+                </md-input-container>
+            </div>
+
+
+            <md-input-container class="md-block">
+                <label>Descrição completa</label>
+                <textarea ng-model="proposta.descricao" md-maxlength="150" rows="5"></textarea>
+            </md-input-container>
+        </form>
+    </md-content>
+
+</div>

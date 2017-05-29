@@ -1,0 +1,1 @@
+angular.module('proposta.ver.module',['proposta.ver.controller']);

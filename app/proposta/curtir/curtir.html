@@ -52,47 +52,14 @@
 
         <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
         <md-progress-linear md-mode="indeterminate" ng-show="mostrarProgress"></md-progress-linear>
-        <table ng-show="mostrarTabela">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Matrícula</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-            </tr>
-            </thead>
-
-            <tbody>
-
-            <tr ng-repeat="u in users">
-                <td>{{u.pk_proposta }}</td>
-                <td>{{u.nome}}</td>
-                <td>{{u.email}}</td>
-                <td>{{u.matricula}}</td>
-                <td>
-                    <md-button class="md-raised md-primary"
-                               ui-sref="in.proposta.alterar({id: u.pk_proposta})"
-                               ng-click="editar($event)">
-                        <md-icon>
-                            <i class="material-icons">mode_edit</i>
-                        </md-icon>
-                    </md-button>
-                </td>
-                <td ng-controller="propostaDeleteCtrl">
-                    <md-button class="md-raised md-warn"
-                               ui-sref="in.proposta.excluir({id: u.pk_proposta})"
-                               ng-click="excluir($event)">
-                        <md-icon>
-                            <i class="material-icons">delete</i>
-                        </md-icon>
-                    </md-button>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
+        <md-list-item class="md-3-line" ng-repeat="proposta in propostas" >
+            <md-button class="md-fab"><md-icon><i class="material-icons">favorite</i></md-icon></md-button>
+            <div class="md-list-item-text" layout="column" ng-click="null">
+                <h3>{{ proposta.titulo}}</h3>
+                <h4>{{ proposta.autor}}</h4>
+                <p>{{ proposta.breveDesc }}</p>
+            </div>
+        </md-list-item>
 </div>
 <!--paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"-->
 <!--mdt-row-paginator="paginatorCallback(page, pageSize)"-->

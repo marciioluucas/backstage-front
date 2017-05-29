@@ -45,12 +45,41 @@ comumRoutes.config(function ($stateProvider) {
                 }
             })
 
-
-        .state('comum.proposta',
+        .state('comum.curtir',
             {
                 parent: 'comum.home',
-                url: "proposta",
-                abstract: true
+                url: "/curtir",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/proposta/curtir/curtir.html",
+                        controller: 'propostaCurtirCtrl'
+                    }
+                }
             })
+        .state('comum.minhas',
+            {
+                parent: 'comum.home',
+                url: "/minhas-propostas",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/proposta/minhas/minhas.html",
+                        controller: 'propostaMinhasCtrl'
+                    }
+                }
+            })
+
+        .state('comum.create',
+            {
+                parent: 'comum.home',
+                url: "/criar",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/proposta/create/cadastro.html",
+                        controller: 'propostaCreateCtrl'
+                    }
+                }
+            })
+
+
 
 });

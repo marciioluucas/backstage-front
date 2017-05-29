@@ -5,10 +5,10 @@ projetoRetreaveController.controller('projetoRetreaveCtrl',
         function ($scope, projetoFactory, $backstageDialog, $state) {
             $scope.mostrarTabela = false;
             $scope.editar = function (evento) {
-                $backstageDialog.addConteudo('app/projeto/update/alterar.html');
+                $backstageDialog.addConteudo('app/projeto/update/ver.html');
                 $backstageDialog.addController('projetoUpdateCtrl');
                 $backstageDialog.addTitulo('Alteração de projeto');
-                $backstageDialog.renderDialog(evento, 'app/projeto/update/alterar.html', 'Alteração de projeto')
+                $backstageDialog.renderDialog(evento, 'app/projeto/update/ver.html', 'Alteração de projeto')
             };
 
 

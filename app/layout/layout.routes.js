@@ -55,7 +55,7 @@ layoutRoutes.config(function ($stateProvider) {
                 url: "dashboard",
                 views: {
                     "navigation": {
-                        templateUrl: "app/dashboard/welcome.html",
+                        templateUrl: "app/dashboard/dashboard.html",
                         controller : 'dashboardCtrl'
                     }
                 },
