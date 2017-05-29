@@ -1,60 +1,29 @@
 <div ng-controller="propostaCreateCtrl" layout="column" ng-cloak>
-
+    <span class="md-headline">Enviando uma ideia!</span>
+    <md-divider></md-divider>
     <md-content layout-padding="">
         <form name="projectForm">
 
             <div layout-gt-sm="row">
                 <md-input-container flex-gt-sm="60">
-                    <label>Nome</label>
-                    <input md-maxlength="80" required name="nome" ng-model="proposta.nome">
+                    <label>Titulo</label>
+                    <input md-maxlength="80" required name="titulo" ng-model="proposta.titulo">
                     <div ng-messages="projectForm.nome.$error">
                         <div ng-message="required">O nome é requirido.</div>
                         <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
                     </div>
                 </md-input-container>
-
-                <md-input-container flex-gt-sm="40">
-                    <label>E-mail</label>
-                    <input md-maxlength="100" md-minlength="10" required type="email" name="email"
-                           ng-model="proposta.email"
-                           minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
-
-                    <div ng-messages="projectForm.email.$error" role="alert">
-                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-                            Um e-mail tem que se parecer com um e-mail e ter entre 10 e 100 caracteres.
-                        </div>
-                    </div>
-
-                </md-input-container>
-            </div>
-
-            <div layout-gt-sm="row">
-                <md-input-container flex-gt-sm="40">
-                    <label>Senha</label>
-                    <input required type="password" name="senha" ng-model="proposta.senha">
-                    <div ng-messages="projectForm.senha.$error">
-                        <div ng-message="required">A senha é requerida.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container flex-gt-sm="25">
-                    <label>Nível</label>
-                    <md-select name="nivel" ng-model="proposta.nivel" required>
-                        <!--NG-REPEAT AQUI PARA FAZER OS NIVEIS-->
-                        <md-option value="1" selected="">Comum</md-option>
-                        <md-option value="2">Programador</md-option>
-                        <md-option value="3">Tutor</md-option>
-                        <md-option value="4">Administrador</md-option>
-                    </md-select>
-                </md-input-container>
-
-                <md-input-container flex-gt-sm="35">
-                    <label>Matrícula</label>
-                    <input name="matricula" ng-model="proposta.matricula">
-                </md-input-container>
-
             </div>
             <md-input-container class="md-block">
-                <md-checkbox name="tos" required>
+                <label>Breve descrição da ideia</label>
+                <textarea  required ng-model="proposta.descricao" md-maxlength="500" rows="5"></textarea>
+                <div ng-messages="projectForm.nome.$error">
+                    <div ng-message="required">A descrição é requirida.</div>
+                    <div ng-message="md-maxlength">A descrição não pode conter mais que 500 caracteres.</div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <md-checkbox name="tos" ng-model="tos" required>
                     Eu aceito com os termos de serviço.
                 </md-checkbox>
                 <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
@@ -65,7 +34,7 @@
             </md-input-container>
 
             <div>
-                <md-button type="submit" class="md-raised md-primary" ng-click="enviar()">Enviar</md-button>
+                <md-button ng-disabled="!tos" type="submit" class="md-raised md-primary" ng-click="enviar()">Enviar</md-button>
             </div>
         </form>
     </md-content>

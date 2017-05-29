@@ -1,7 +1,11 @@
 'use strict';
-var comumRoutes = angular.module('comum.routes', ['ui.router']);
-comumRoutes.config(function ($stateProvider) {
-
+var comumRoutes = angular.module('comum.routes', ['ui.router','ngRoute']);
+comumRoutes.config(function ($stateProvider,$urlRouterProvider) {
+    // $routeProvider.otherwise('/');
+    $urlRouterProvider.otherwise(function($injector) {
+        var $state = $injector.get('$state');
+        $state.go('comum.welcome');
+    });
     $stateProvider.state('comum',
         {
             name: 'comum',
@@ -48,7 +52,7 @@ comumRoutes.config(function ($stateProvider) {
         .state('comum.curtir',
             {
                 parent: 'comum.home',
-                url: "/curtir",
+                url: "curtir",
                 views: {
                     "navigation": {
                         templateUrl: "app/proposta/curtir/curtir.html",
@@ -59,7 +63,7 @@ comumRoutes.config(function ($stateProvider) {
         .state('comum.minhas',
             {
                 parent: 'comum.home',
-                url: "/minhas-propostas",
+                url: "minhas-propostas",
                 views: {
                     "navigation": {
                         templateUrl: "app/proposta/minhas/minhas.html",
@@ -71,7 +75,7 @@ comumRoutes.config(function ($stateProvider) {
         .state('comum.create',
             {
                 parent: 'comum.home',
-                url: "/criar",
+                url: "criar",
                 views: {
                     "navigation": {
                         templateUrl: "app/proposta/create/cadastro.html",

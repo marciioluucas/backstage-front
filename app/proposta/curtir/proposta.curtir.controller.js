@@ -1,8 +1,13 @@
 var propostaCurtirController = angular.module('proposta.curtir.controller', []);
 
 propostaCurtirController.controller('propostaCurtirCtrl',
-    ['$scope', 'propostaFactory', '$backstageDialog', '$state',
-        function ($scope, propostaFactory, $backstageDialog, $state) {
+    ['$scope', 'propostaFactory', '$backstageDialog', '$localStorage',
+        function ($scope, propostaFactory, $backstageDialog, $localStorage) {
+            $localStorage.help =
+                "Nesta tela voce pode curtir as ideias submetidas clicando no botão redondo com coração," +
+                "visualizar completamente a ideia clicando nela e pesquisar as ideias que mais te chamar atenção!";
+
+
             $scope.mostrarTabela = false;
             $scope.ver = function (evento) {
                 $backstageDialog.addConteudo('app/proposta/update/ver.html');
@@ -28,7 +33,7 @@ propostaCurtirController.controller('propostaCurtirCtrl',
                     params.push("login=" + $scope.login);
                 }
 
-                    $scope.users = propostaFactory.get(params).query(function () {
+                $scope.users = propostaFactory.get(params).query(function () {
                     $scope.mostrarTabela = true;
                     $scope.mostrarProgress = false;
                 });

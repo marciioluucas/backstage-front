@@ -1,7 +1,12 @@
 'use strict';
 var welcomeController = angular.module('welcome.controller', []);
 
-welcomeController.controller('welcomeCtrl', ['$scope', 'welcomeFactory', function ($scope, welcomeFactory) {
+welcomeController.controller('welcomeCtrl', ['$scope', 'welcomeFactory','$localStorage',
+    function ($scope, welcomeFactory, $localStorage) {
+
+    $localStorage.help =
+        "Nesta tela você poderá ver como estão andando as coisas pela fábrica de software, como " +
+        "ideias aprovadas, o TOP 10 das ideias mais votadas entre outras coisas.";
 
 
     var usuariosAtivos = welcomeFactory.getUsersAtivos.query(function () {

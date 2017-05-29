@@ -3,6 +3,7 @@ angular.module("backstage",
     [
         "ngMaterial",
         "chart.js",
+        "ngStorage",
         "app.routes",
         "app.modules",
         "app.directives"

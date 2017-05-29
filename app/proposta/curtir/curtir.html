@@ -1,65 +1,53 @@
-<div ng-controller="propostaCurtirCtrl" layout="column">
+<div ng-controller="propostaCurtirCtrl" layout="column" class="md-block">
+    <span class="md-headline">Ideias para curtir</span>
+    <md-divider></md-divider>
     <md-content layout-padding="">
         <form name="consultaUsuarioForm">
 
             <div layout-gt-sm="row">
-                <md-input-container flex-gt-sm="60">
-                    <label>Nome</label>
-                    <input md-maxlength="80" name="nome" ng-model="nome">
+                <md-input-container flex="100">
+                    <label>Título</label>
+                    <input md-maxlength="150" name="nome" ng-model="nome">
                     <div ng-messages="consultaUsuarioForm.nome.$error">
-                        <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
-                    </div>
-                </md-input-container>
-
-                <md-input-container flex-gt-sm="40">
-                    <label>E-mail</label>
-                    <input md-maxlength="100" type="text" name="email"
-                           ng-model="email"/>
-                    <div ng-messages="consultaUsuarioForm.email.$error">
-                        <div ng-message="md-maxlength">O email não pode conter mais que 100 caracteres.</div>
+                        <div ng-message="md-maxlength">O título é muito grande</div>
                     </div>
                 </md-input-container>
             </div>
 
-            <div layout-gt-sm="row">
-                <md-input-container flex-gt-sm="30">
-                    <label>Nível</label>
-                    <md-select name="nivel" ng-model="nivel">
-                        <!--NG-REPEAT AQUI PARA FAZER OS NIVEIS-->
-                        <md-option value="1" selected="">Comum</md-option>
-                        <md-option value="2">Programador</md-option>
-                        <md-option value="3">Tutor</md-option>
-                        <md-option value="4">Administrador</md-option>
-                    </md-select>
-                </md-input-container>
-
-                <md-input-container flex-gt-sm="35">
-                    <label>Matrícula</label>
-                    <input name="matricula" ng-model="matricula">
-                </md-input-container>
-
-                <md-input-container flex-gt-sm="35">
-                    <label>Login</label>
-                    <input name="login" ng-model="login">
-                </md-input-container>
-
-            </div>
 
             <div>
                 <md-button type="submit" class="md-raised md-primary" ng-click="buscar()">Pesquisar</md-button>
             </div>
         </form>
 
+
         <!--<div ng-repeat="us in users">{{us.nome}}</div>&lt;!&ndash;<div class="section"></div>&ndash;&gt;-->
         <md-progress-linear md-mode="indeterminate" ng-show="mostrarProgress"></md-progress-linear>
-        <md-list-item class="md-3-line" ng-repeat="proposta in propostas" >
-            <md-button class="md-fab"><md-icon><i class="material-icons">favorite</i></md-icon></md-button>
-            <div class="md-list-item-text" layout="column" ng-click="null">
-                <h3>{{ proposta.titulo}}</h3>
-                <h4>{{ proposta.autor}}</h4>
-                <p>{{ proposta.breveDesc }}</p>
-            </div>
-        </md-list-item>
+        <md-list class="md-block">
+            <md-list-item class="md-3-line" layout="row" layout-align="start center">
+                <div class="md-avatar" flex="25" flex-gt-md="10">
+                    <md-button class="md-fab ">
+                        <md-icon><i class="material-icons">favorite</i></md-icon>
+                    </md-button>
+                </div>
+                <div flex="75" flex-gt-md="90" class="md-list-item-text secondary-button-padding" layout="column" ng-click="null">
+                    <h3>Testsssssssssssssssssssssssssssssssse</h3>
+                    <h4>BLA BLA bssssssssssssssssssssssssssssssssssssssssssssla</h4>
+                    <p>por: Marcio</p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-3-line" ng-repeat="proposta in propostas">
+                <md-button class="md-fab">
+                    <md-icon><i class="material-icons">favorite</i></md-icon>
+                </md-button>
+                <div class="md-list-item-text" layout="column" ng-click="null">
+                    <h3>{{ proposta.titulo}}</h3>
+                    <h4>{{ proposta.autor}}</h4>
+                    <p>{{ proposta.breveDesc }}</p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-content>
 </div>
 <!--paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"-->
 <!--mdt-row-paginator="paginatorCallback(page, pageSize)"-->

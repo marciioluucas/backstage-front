@@ -1,7 +1,11 @@
 var spartanRoutes = angular.module('app.routes', ['ui.router']);
-spartanRoutes.config(function ($stateProvider,$locationProvider) {
+spartanRoutes.config(function ($stateProvider,$locationProvider, $urlRouterProvider) {
 
     $locationProvider.hashPrefix('');
+    $urlRouterProvider.otherwise(function($injector) {
+        var $state = $injector.get('$state');
+        $state.go('login');
+    });
     var rotas =
         [
             {

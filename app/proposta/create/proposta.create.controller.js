@@ -1,11 +1,17 @@
 var propostaCreateController = angular.module('proposta.create.controller', []);
 
 propostaCreateController.controller('propostaCreateCtrl',
-    ['$scope', 'propostaFactory', '$backstageToast',
+    ['$scope', 'propostaFactory', '$backstageToast','$localStorage',
 
-    function ($scope, propostaFactory, $backstageToast) {
+    function ($scope, propostaFactory, $backstageToast,$localStorage) {
+
+        $localStorage.help =
+            "Aqui você pode mandar uma ideia para que ela possa ser votada, revisada e talvez vire um software de VERDADE!";
+
 
         var params = '';
+
+        $scope.tos = true;
 
         $scope.enviar = function () {
             var proposta = {

@@ -1,8 +1,13 @@
 var propostaMinhasController = angular.module('proposta.minhas.controller', []);
 
 propostaMinhasController.controller('propostaMinhasCtrl',
-    ['$scope', 'propostaFactory', '$backstageDialog', '$state',
-        function ($scope, propostaFactory, $backstageDialog, $state) {
+    ['$scope', 'propostaFactory', '$backstageDialog', '$localStorage',
+        function ($scope, propostaFactory, $backstageDialog, $localStorage) {
+
+            $localStorage.help =
+                "Nesta tela voce pode ver as ideias que você submeteu clicando no botão pesquisar ou pode adicionar um filtro " +
+                "para que sua busca seja mais precisa!";
+
             $scope.mostrarTabela = false;
             $scope.editar = function (evento) {
                 $backstageDialog.addConteudo('app/proposta/update/ver.html');
