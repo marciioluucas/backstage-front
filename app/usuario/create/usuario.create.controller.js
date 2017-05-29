@@ -23,19 +23,20 @@ usuarioCreateController.controller('usuarioCreateCtrl',
             if ($scope.usuario.email !== undefined) {
                 params.push("email=" + encodeURI($scope.usuario.email));
             }
+            if ($scope.usuario.nivel !== undefined) {
+                params.push("nivel=" + encodeURI($scope.usuario.nivel));
+            }
             if ($scope.usuario.matricula !== undefined) {
                 params.push("matricula=" + encodeURI($scope.usuario.matricula));
             }
             if ($scope.usuario.senha !== undefined) {
                 params.push("senha=" + encodeURI($scope.usuario.senha));
             }
-            if ($scope.usuario.matricula !== undefined) {
-                params.push("login=" + encodeURI($scope.usuario.matricula));
-            }
 
             usuarioFactory.add(params).save()
                 .$promise.then(
                 function (value) {
+                    console.log(params);
                     return $backstageToast.come(value.extra.icone,value.message);
                 },
 

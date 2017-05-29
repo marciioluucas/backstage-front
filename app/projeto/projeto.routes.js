@@ -10,7 +10,7 @@ projetoRoutes.config(function ($stateProvider) {
                 url: "/pesquisar",
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/projeto/retreave/minhas.html",
+                        templateUrl: "app/projeto/retreave/retreave.html",
                         controller: 'projetoRetreaveCtrl'
                     }
                 }
@@ -34,7 +34,7 @@ projetoRoutes.config(function ($stateProvider) {
                 controller: 'projetoUpdateCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/projeto/retreave/minhas.html"
+                        templateUrl: "app/projeto/retreave/retreave.html"
                     }
                 }
             })
@@ -45,7 +45,7 @@ projetoRoutes.config(function ($stateProvider) {
                 controller: 'projetoDeleteCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/projeto/retreave/minhas.html"
+                        templateUrl: "app/projeto/retreave/retreave.html"
                     }
                 }
             })

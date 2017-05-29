@@ -52,28 +52,5 @@ comumRoutes.config(function ($stateProvider) {
                 url: "proposta",
                 abstract: true
             })
-    .state('comum.proposta.curtir',
-        {
-            parent: 'comum.proposta',
-            url: "/curtir",
-            views: {
-                "navigation": {
-                    templateUrl: "app/proposta/curtir/curtir.html",
-                    controller: 'curtirCtrl'
-                }
-            }
-        })
-        .state('comum.proposta.minhas',
-            {
-                parent: 'comum.proposta',
-                url: "/minhas",
-                views: {
-                    "navigation": {
-                        templateUrl: "app/proposta/minhas/minhas.html",
-                        controller: 'minhasCtrl'
-                    }
-                }
-            })
-
 
 });

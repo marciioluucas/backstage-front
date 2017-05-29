@@ -9,44 +9,45 @@ propostaRoutes.config(function ($stateProvider) {
                 parent: 'in.proposta',
                 url: "/pesquisar",
                 views: {
-                    "pesquisar": {
-                        templateUrl: "app/proposta/retreave/minhas.html",
+                    "navigation": {
+                        templateUrl: "app/proposta/retreave/retreave.html",
                         controller: 'propostaRetreaveCtrl'
                     }
                 }
             })
-        .state('in.proposta.cadastrar',
+        .state('comum.proposta.curtir',
             {
-                parent: 'in.proposta',
-                url: "/cadastrar",
+                parent: 'comum.proposta',
+                url: "/curtir",
                 views: {
-                    "cadastro": {
+                    "navigation": {
+                        templateUrl: "app/proposta/curtir/curtir.html",
+                        controller: 'propostaCurtirCtrl'
+                    }
+                }
+            })
+        .state('comum.proposta.minhas',
+            {
+                parent: 'comum.proposta',
+                url: "/minhas",
+                views: {
+                    "navigation": {
+                        templateUrl: "app/proposta/minhas/minhas.html",
+                        controller: 'propostaMinhasCtrl'
+                    }
+                }
+            })
+        .state('comum.proposta.create',
+            {
+                parent: 'comum.proposta',
+                url: "/criar",
+                views: {
+                    "navigation": {
                         templateUrl: "app/proposta/create/cadastro.html",
                         controller: 'propostaCreateCtrl'
                     }
                 }
             })
 
-        .state('in.proposta.alterar',
-            {
-                parent: 'in.proposta',
-                url: '/alterar/{id}/',
-                controller: 'propostaUpdateCtrl',
-                views: {
-                    "pesquisar": {
-                        templateUrl: "app/proposta/retreave/minhas.html"
-                    }
-                }
-            })
-        .state('in.proposta.excluir',
-            {
-                parent: 'in.proposta',
-                url: '/excluir/{id}/',
-                controller: 'propostaDeleteCtrl',
-                views: {
-                    "pesquisar": {
-                        templateUrl: "app/proposta/retreave/minhas.html"
-                    }
-                }
-            })
+
 });

@@ -10,7 +10,7 @@ equipeRoutes.config(function ($stateProvider) {
                 url: "/pesquisar",
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/equipe/retreave/minhas.html",
+                        templateUrl: "app/equipe/retreave/retreave.html",
                         controller: 'equipeRetreaveCtrl'
                     }
                 }
@@ -34,7 +34,7 @@ equipeRoutes.config(function ($stateProvider) {
                 controller: 'equipeUpdateCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/equipe/retreave/minhas.html"
+                        templateUrl: "app/equipe/retreave/retreave.html"
                     }
                 }
             })
@@ -45,7 +45,7 @@ equipeRoutes.config(function ($stateProvider) {
                 controller: 'equipeDeleteCtrl',
                 views: {
                     "pesquisar": {
-                        templateUrl: "app/equipe/retreave/minhas.html"
+                        templateUrl: "app/equipe/retreave/retreave.html"
                     }
                 }
             })
