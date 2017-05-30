@@ -15,28 +15,16 @@ propostaCreateController.controller('propostaCreateCtrl',
 
         $scope.enviar = function () {
             var proposta = {
-                nome: $scope.proposta.nome,
-                email: $scope.proposta.email,
-                senha: $scope.proposta.senha,
-                nivel: $scope.proposta.nivel,
-                matricula: $scope.proposta.matricula
+                titulo: $scope.proposta.titulo,
+                descricao: $scope.proposta.descricao
             };
             var params = [];
-            if ($scope.proposta.nome !== undefined) {
+            if ($scope.proposta.titulo !== undefined) {
 
-                params.push("nome=" + encodeURI($scope.proposta.nome));
+                params.push("titulo=" + encodeURI($scope.proposta.titulo));
             }
-            if ($scope.proposta.email !== undefined) {
-                params.push("email=" + encodeURI($scope.proposta.email));
-            }
-            if ($scope.proposta.matricula !== undefined) {
-                params.push("matricula=" + encodeURI($scope.proposta.matricula));
-            }
-            if ($scope.proposta.senha !== undefined) {
-                params.push("senha=" + encodeURI($scope.proposta.senha));
-            }
-            if ($scope.proposta.matricula !== undefined) {
-                params.push("login=" + encodeURI($scope.proposta.matricula));
+            if ($scope.proposta.descricao !== undefined) {
+                params.push("descricao=" + encodeURI($scope.proposta.descricao));
             }
 
             propostaFactory.add(params).save()

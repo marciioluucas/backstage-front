@@ -25,16 +25,18 @@
             <tr>
                 <th>ID</th>
                 <th>Titulo</th>
+                <th>Votos</th>
                 <th>Autor</th>
-                <th>Visualizar</th>
             </tr>
             </thead>
 
             <tbody>
 
             <tr ng-repeat="p in propostas">
+                <td>{{p.pk_proposta}}</td>
                 <td>{{p.titulo}}</td>
-                <td>{{p.autor}}</td>
+                <td>{{p.contagem}}</td>
+                <td>{{p.autor.nome}}</td>
 
             </tr>
 

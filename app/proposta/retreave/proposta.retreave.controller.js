@@ -16,19 +16,10 @@ propostaRetreaveController.controller('propostaRetreaveCtrl',
                 $scope.mostrarProgress = true;
                 var params = [];
                 if ($scope.nome !== undefined && $scope.nome !== '') {
-                    params.push("nome=" + $scope.nome);
-                }
-                if ($scope.email !== undefined && $scope.email !== '') {
-                    params.push("email=" + $scope.email);
-                }
-                if ($scope.matricula !== undefined && $scope.matricula !== '') {
-                    params.push("matricula=" + $scope.matricula);
-                }
-                if ($scope.login !== undefined && $scope.login !== '') {
-                    params.push("login=" + $scope.login);
+                    params.push("titulo=" + $scope.titulo);
                 }
 
-                    $scope.users = propostaFactory.get(params).query(function () {
+                    $scope.propostas = propostaFactory.get(params).query(function () {
                     $scope.mostrarTabela = true;
                     $scope.mostrarProgress = false;
                 });
