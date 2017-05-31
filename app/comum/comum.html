@@ -1,21 +1,22 @@
-<div layout="column" style="min-height: 100%" ng-controller="comumCtrl">
+<div layout="column" ng-controller="comumCtrl">
 
     <nav ui-view="comum@toolbar"></nav>
 
-    <section layout-gt-md="row">
+    <div layout-gt-md="row">
 
         <aside>
             <nav ui-view="comum@sidenav" flex-gt-md="100"></nav>
         </aside>
-        <main ui-view="comum@content" layout-padding="" flex="100"></main>
-        <footer style="margin-top:50px">
-            <md-button ui-sref="comum.create" hide-gt-md style="position: fixed;"
-                       class="md-fab md-fab-bottom-right md-button md-ink-ripple"
-                       aria-label="Use Android">
-                <md-icon><i class="material-icons">add</i></md-icon>
-            </md-button>
+        <md-content ng-style="alturaTela($event)">
+            <main ui-view="comum@content" flex layout-padding></main>
+        </md-content>
 
-        </footer>
-
-    </section>
+    </div>
+    <footer>
+        <md-button ui-sref="comum.create" hide-gt-md
+                   class="md-fab md-fab-bottom-right md-button md-ink-ripple"
+                   aria-label="Use Android">
+            <md-icon><i class="material-icons">add</i></md-icon>
+        </md-button>
+    </footer>
 </div>

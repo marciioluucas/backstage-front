@@ -6,13 +6,11 @@
             <md-toolbar class="md-theme-indigo">
                 <h1 class="md-toolbar-tools">Nome da Pessoa</h1>
             </md-toolbar>
-            <md-content>
                 <div ui-view="comum@menu"></div>
-            </md-content>
         </md-sidenav>
     </section>
 
-    <md-toolbar style="margin-top: 56px"  layout-fill layout="row" ng-controller="comumToolbarCtrl" hide-gt-md>
+    <md-toolbar  layout-fill layout="row" ng-controller="comumToolbarCtrl" hide-gt-md>
         <div class="md-toolbar-tools" ng-controller="sidenavCtrl">
             <div ui-view="comum@menu" style="width: 100%"></div>
         </div>
