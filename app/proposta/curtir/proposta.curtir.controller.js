@@ -1,8 +1,8 @@
 var propostaCurtirController = angular.module('proposta.curtir.controller', []);
 
 propostaCurtirController.controller('propostaCurtirCtrl',
-    ['$scope', 'propostaFactory', '$backstageDialog', '$localStorage',
-        function ($scope, propostaFactory, $backstageDialog, $localStorage) {
+    ['$scope', 'propostaFactory', '$backstageDialog','$backstageToast', '$localStorage',
+        function ($scope, propostaFactory, $backstageDialog,$backstageToast, $localStorage) {
             $localStorage.help =
                 "Nesta tela voce pode curtir as ideias submetidas clicando no botão redondo com coração," +
                 "visualizar completamente a ideia clicando nela e pesquisar as ideias que mais te chamar atenção!";
@@ -16,24 +16,32 @@ propostaCurtirController.controller('propostaCurtirCtrl',
                 $backstageDialog.renderDialog(evento, 'app/proposta/update/ver.html', 'Alteração de proposta')
             };
 
+            var params = [];
+            $scope.curtir = function(fk_proposta, index) {
+                params.push("fk_proposta=" + encodeURI(fk_proposta));
+                params.push("fk_usuario=" + encodeURI(1));
+                propostaFactory.curtir(params).save()
+                    .$promise.then(
+                    function (value) {
+                        $scope.propostas[index] = propostaFactory.get(["pk_proposta="+fk_proposta]).get();
+                        return $backstageToast.come(value.extra.icone,value.message);
+                    },
+
+                    function (error) {
+                        console.log("ERRO: " + error);
+                    }
+                );
+            };
 
             $scope.buscar = function () {
                 $scope.mostrarProgress = true;
                 var params = [];
-                if ($scope.nome !== undefined && $scope.nome !== '') {
-                    params.push("nome=" + $scope.nome);
-                }
-                if ($scope.email !== undefined && $scope.email !== '') {
-                    params.push("email=" + $scope.email);
-                }
-                if ($scope.matricula !== undefined && $scope.matricula !== '') {
-                    params.push("matricula=" + $scope.matricula);
-                }
-                if ($scope.login !== undefined && $scope.login !== '') {
-                    params.push("login=" + $scope.login);
+                if ($scope.titulo !== undefined && $scope.titulo !== '') {
+                    params.push("titulo=" + $scope.nome);
                 }
 
-                $scope.users = propostaFactory.get(params).query(function () {
+
+                $scope.propostas = propostaFactory.get(params).query(function () {
                     $scope.mostrarTabela = true;
                     $scope.mostrarProgress = false;
                 });

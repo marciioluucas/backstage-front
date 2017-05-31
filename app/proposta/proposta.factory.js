@@ -14,6 +14,9 @@ propostaFactory.factory('propostaFactory', ['$resource', function ($resource) {
     var _add = function (params) {
         return $resource(apiUrl + "/proposta/?" + params.join('&'));
     };
+    var _curtir = function (params) {
+        return $resource(apiUrl + "/voto/?" + params.join('&'));
+    };
 
     var _update = function (params) {
         console.log(apiUrl + "/proposta/?" + params.join('&'));
@@ -29,6 +32,7 @@ propostaFactory.factory('propostaFactory', ['$resource', function ($resource) {
         get: _get,
         add: _add,
         update: _update,
-        destroy: _destroy
+        destroy: _destroy,
+        curtir: _curtir
     };
 }]);
