@@ -9,4 +9,4 @@ angular.module("backstage",
         "app.directives"
     ]
 );
-var apiUrl = "http://192.168.1.15:8080/backstage-platform/api";
+var apiUrl = "http://backstage.ifapps-morrinhos.com/dev/api";
