@@ -11,8 +11,8 @@
     <md-card-content>
         <form name="Form">
             <md-input-container class="md-block">
-                <label>Login</label>
-                <input type="text" name="email" ng-model="email" placeholder="login" required=""/>
+                <label>Email</label>
+                <input type="email" name="email" ng-model="email" placeholder="E-mail" required=""/>
                 <div ng-messages="Form.email.$error" role="alert" multiple="">
                     <div ng-message="required" class="my-message">Please enter your email.</div>
                 </div>

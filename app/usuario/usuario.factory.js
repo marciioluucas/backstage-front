@@ -26,10 +26,25 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
     var _destroy = function (params) {
         return $resource(apiUrl + "/usuario/?" + params.join('&'));
     };
+
+    var _login = function (email, senha) {
+        return $resource(apiUrl + "/usuario/?method=logar",
+            {
+                email: email,
+                senha: senha
+            },
+            {
+                login: {
+                    method: 'post',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                }
+            });
+    };
     return {
         get: _get,
         add: _add,
         update: _update,
-        destroy: _destroy
+        destroy: _destroy,
+        login: _login
     };
 }]);
