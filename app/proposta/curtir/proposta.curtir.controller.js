@@ -19,7 +19,7 @@ propostaCurtirController.controller('propostaCurtirCtrl',
             var params = [];
             $scope.curtir = function(fk_proposta, index) {
                 params.push("fk_proposta=" + encodeURI(fk_proposta));
-                params.push("fk_usuario=" + encodeURI(1));
+                params.push("fk_usuario=" + encodeURI($localStorage.usuarioLogado.id));
                 propostaFactory.curtir(params).save()
                     .$promise.then(
                     function (value) {

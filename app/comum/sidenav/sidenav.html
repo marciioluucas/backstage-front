@@ -4,7 +4,7 @@
                     md-whiteframe="4">
 
             <md-toolbar class="md-theme-indigo">
-                <h1 class="md-toolbar-tools">Nome da Pessoa</h1>
+                <h1 class="md-toolbar-tools">{{$localStorage.usuarioLogado.nome}}</h1>
             </md-toolbar>
                 <div ui-view="comum@menu"></div>
         </md-sidenav>
