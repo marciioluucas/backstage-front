@@ -2,15 +2,24 @@ var loginController = angular.module('usuario.login.controller', []);
 loginController.controller('usuarioLoginCtrl', ['$scope', '$location', 'usuarioFactory', '$localStorage',
     function ($scope, $location, usuarioFactory, $localStorage) {
 
-        var bate = false;
         $scope.logar = function () {
-          var u = usuarioFactory.login().login($scope.email, $scope.senha);
-          console.log(u);
-            if(u.autorizado === true) {
-              $localStorage.token = u.token;
-              $localStorage.idUsuarioLogado = u.pk_usuario;
-              $localStorage.nomeUsuarioLogado = u.nome;
-              console.log($localStorage);
-            }
+            var params = [];
+            params.push("email="+$scope.login);
+            params.push("senha="+$scope.senha);
+
+            var u = usuarioFactory.login(params).prototype.$login()
+                .then(function (value) {
+
+                if (value.autorizado === true) {
+                    $localStorage.token = value.token;
+                    $localStorage.idUsuarioLogado = value.pk_usuario;
+                    $localStorage.nomeUsuarioLogado = value.nome;
+                    console.log($localStorage);
+                }
+                console.log(value);
+            });
+            // console.log(email + " "+ senha);
+            console.log(u);
+
         };
     }]);

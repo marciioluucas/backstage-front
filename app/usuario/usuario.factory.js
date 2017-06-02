@@ -27,16 +27,14 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
         return $resource(apiUrl + "/usuario/?" + params.join('&'));
     };
 
-    var _login = function (email, senha) {
-        return $resource(apiUrl + "/usuario/?method=logar",
-            {
-                email: email,
-                senha: senha
-            },
+    var _login = function (params) {
+        return $resource(apiUrl + "/usuario/?method=logar" + params.join('&'),
+            {},
             {
                 login: {
+
                     method: 'post',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }
             });
     };

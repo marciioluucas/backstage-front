@@ -1,3 +1,4 @@
+'use strict';
 var propostaCreateController = angular.module('proposta.create.controller', []);
 
 propostaCreateController.controller('propostaCreateCtrl',
