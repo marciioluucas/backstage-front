@@ -1,10 +1,10 @@
 'use strict';
-var comumRoutes = angular.module('comum.routes', ['ui.router','ngRoute']);
-comumRoutes.config(function ($stateProvider,$urlRouterProvider) {
+var comumRoutes = angular.module('comum.routes', ['ui.router', 'ngRoute']);
+comumRoutes.config(function ($stateProvider, $urlRouterProvider) {
     // $routeProvider.otherwise('/');
-    $urlRouterProvider.otherwise(function($injector) {
+    $urlRouterProvider.otherwise(function ($injector) {
         var $state = $injector.get('$state');
-        $state.go('comum.welcome');
+        $state.go('login');
     });
     $stateProvider.state('comum',
         {
@@ -85,5 +85,10 @@ comumRoutes.config(function ($stateProvider,$urlRouterProvider) {
             })
 
 
-
 });
+comumRoutes.run(['$localStorage', function ($localStorage) {
+    if($localStorage.token == undefined){
+        var $state = $injector.get('$state');
+        $state.go('login');
+    }
+}]);

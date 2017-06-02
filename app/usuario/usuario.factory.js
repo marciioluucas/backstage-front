@@ -28,13 +28,11 @@ usuarioFactory.factory('usuarioFactory', ['$resource', function ($resource) {
     };
 
     var _login = function (params) {
-        return $resource(apiUrl + "/usuario/?method=logar" + params.join('&'),
+        return $resource(apiUrl + "/usuario/?method=logar&" + params.join('&'),
             {},
             {
                 login: {
-
-                    method: 'post',
-                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                    method: 'post'
                 }
             });
     };

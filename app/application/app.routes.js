@@ -11,7 +11,8 @@ spartanRoutes.config(function ($stateProvider,$locationProvider, $urlRouterProvi
             {
                 name: 'home',
                 url: '/',
-                templateUrl: 'app/usuario/login/login.html'
+                abstract: true
+                // templateUrl: 'app/usuario/login/login.html'
             },
             {
                 name: 'criar-conta',

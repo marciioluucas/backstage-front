@@ -1,25 +1,34 @@
 var loginController = angular.module('usuario.login.controller', []);
-loginController.controller('usuarioLoginCtrl', ['$scope', '$location', 'usuarioFactory', '$localStorage',
-    function ($scope, $location, usuarioFactory, $localStorage) {
+loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
+    'usuarioFactory', '$localStorage', '$state', '$backstageToast',
+    function ($scope, $location, usuarioFactory, $localStorage, $state, $backstageToast) {
 
         $scope.logar = function () {
             var params = [];
-            params.push("email="+$scope.login);
-            params.push("senha="+$scope.senha);
+            params.push("email=" + $scope.login);
+            params.push("senha=" + $scope.senha);
 
-            var u = usuarioFactory.login(params).prototype.$login()
-                .then(function (value) {
+            usuarioFactory.login(params).login().$promise.then(function (value) {
+                    if (value.autenticado === true) {
+                        $localStorage.usuarioLogado = {};
+                        $localStorage.usuarioLogado.token = value.token;
+                        $localStorage.usuarioLogado.id = parseInt(jwt_decode(value.token).data.pk_usuario);
+                        $localStorage.usuarioLogado.nome = jwt_decode(value.token).data.nome;
+                        $localStorage.usuarioLogado.nivel = parseInt(jwt_decode(value.token).data.nivel);
+                        if($localStorage.usuarioLogado.nivel === 1){
+                            $state.go('comum.welcome')
+                        }
+                        if($localStorage.usuarioLogado.nivel > 1) {
+                            $state.go('in.dashboard')
+                        }
+                    } else {
 
-                if (value.autorizado === true) {
-                    $localStorage.token = value.token;
-                    $localStorage.idUsuarioLogado = value.pk_usuario;
-                    $localStorage.nomeUsuarioLogado = value.nome;
-                    console.log($localStorage);
-                }
-                console.log(value);
-            });
-            // console.log(email + " "+ senha);
-            console.log(u);
+                        $backstageToast.come(value.extra.icone, value.message)
+                    }
+                },
+                function (error) {
+                    console.log(error);
+                });
 
         };
     }]);
