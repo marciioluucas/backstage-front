@@ -10,6 +10,9 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
 
             usuarioFactory.login(params).login().$promise.then(function (value) {
                     if (value.autenticado === true) {
+                        if($localStorage.usuarioLogado === undefined) {
+                            delete $localStorage.usuarioLogado;
+                        }
                         $localStorage.usuarioLogado = {};
                         $localStorage.usuarioLogado.token = value.token;
                         $localStorage.usuarioLogado.id = parseInt(jwt_decode(value.token).data.pk_usuario);
@@ -21,6 +24,7 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
                         if($localStorage.usuarioLogado.nivel > 1) {
                             $state.go('in.dashboard')
                         }
+                        console.log($localStorage);
                     } else {
 
                         $backstageToast.come(value.extra.icone, value.message)

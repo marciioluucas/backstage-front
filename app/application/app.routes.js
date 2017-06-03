@@ -1,5 +1,5 @@
-var spartanRoutes = angular.module('app.routes', ['ui.router']);
-spartanRoutes.config(function ($stateProvider,$locationProvider, $urlRouterProvider) {
+var backstageRoutes = angular.module('app.routes', ['ui.router']);
+backstageRoutes.config(function ($stateProvider,$locationProvider, $urlRouterProvider) {
 
     $locationProvider.hashPrefix('');
     $urlRouterProvider.otherwise(function($injector) {
@@ -38,4 +38,15 @@ spartanRoutes.config(function ($stateProvider,$locationProvider, $urlRouterProvi
         $stateProvider.state(rotas[i]);
     }
 });
+backstageRoutes.run(['$localStorage','$state', function ($localStorage, $state) {
+    if($state.current.name !== 'login'){
+        console.log($state);
+        if($state.current.parent === 'comum' && $localStorage.usuarioLogado.nivel !== 1){
+            $state.go('login');
+        }
+        if($state.current.parent === 'in.home' && $localStorage.usuarioLogado.nivel < 2){
+            $state.go('login');
+        }
+    }
 
+}]);
