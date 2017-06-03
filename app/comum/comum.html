@@ -7,13 +7,13 @@
         <aside>
             <nav ui-view="comum@sidenav" flex-gt-md="100"></nav>
         </aside>
-        <md-content ng-style="alturaTela($event)">
+        <md-content ng-style="alturaTela($event)" flex="100">
             <main ui-view="comum@content" flex layout-padding></main>
         </md-content>
 
     </div>
     <footer>
-        <md-button ui-sref="comum.create" hide-gt-md
+        <md-button ui-sref="comum.create"
                    class="md-fab md-fab-bottom-right md-button md-ink-ripple"
                    aria-label="Use Android">
             <md-icon><i class="material-icons">add</i></md-icon>
