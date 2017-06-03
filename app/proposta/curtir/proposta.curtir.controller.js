@@ -36,6 +36,7 @@ propostaCurtirController.controller('propostaCurtirCtrl',
             $scope.buscar = function () {
                 $scope.mostrarProgress = true;
                 var params = [];
+                params.push("method=listarPorVoto");
                 if ($scope.titulo !== undefined && $scope.titulo !== '') {
                     params.push("titulo=" + $scope.nome);
                 }
