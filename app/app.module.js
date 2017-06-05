@@ -9,4 +9,4 @@ angular.module("backstage",
         "app.directives"
     ]
 );
-var apiUrl = "http://lukee/backstage-platform/api";
+var apiUrl = "http://backstage.ifapps-morrinhos.com/dev/api";
