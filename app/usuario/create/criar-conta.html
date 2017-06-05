@@ -1,68 +1,68 @@
-<div class="section"></div>
-<main class="row">
-    <div class="col s12 l4 offset-s4">
-    </div>
-    <div class="col s12 l4">
-        <img class="responsive-img center-block" style="width: 250px;" src="app/dist/imgs/spartan-logo.svg">
-
-        <div class="section"></div>
-
-        <!--<div class="card white darken-1">-->
-        <!--<div class="card-content">-->
-        <h5 class="materialize-red-text center-align">Por favor, logue-se para continuar</h5>
-        <div class="container">
-            <div class="row">
-                <form method="post">
-
-                    <div class='row '>
-                        <div class='input-field col s12 '>
-                            <input class='grey darken-3' type='text' name='nome' id='nome'/>
-                            <label for='nome' class="">Coloque seu nome</label>
-                        </div>
-                    </div>
-
-                    <div class='row '>
-                        <div class='input-field col s12 '>
-                            <input class='validate grey darken-3' type='email' name='email' id='email'/>
-                            <label for='email' class="">Coloque seu e-mail</label>
-                        </div>
-                    </div>
-
-                    <div class='row'>
-                        <div class='input-field col s12'>
-                            <input class='validate  grey darken-3' type='password' name='password' id='password'/>
-                            <label for='password'>Coloque sua senha</label>
-                        </div>
-                    </div>
-                        <div class='row'>
-                            <div class='input-field col s12'>
-                                <input class='validate  grey darken-3' type='password' name='re-password'
-                                       id='re-password'/>
-                                <label for='re-password'>Repita a senha</label>
+<main class="md-hue-2" ng-controller="usuarioCreateCtrl">
+    <md-content class="md-padding" layout-align="center center" layout-xs="column" layout="row">
+        <div layout="column" flex="35">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Criando conta</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <form name="projectForm">
+                <md-card-content>
+                        <md-input-container class="md-block">
+                            <label>Nome</label>
+                            <input md-maxlength="80" required name="nome" ng-model="usuario.nome">
+                            <div ng-messages="projectForm.nome.$error">
+                                <div ng-message="required">O nome é requirido.</div>
+                                <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
                             </div>
-                        </div>
+                        </md-input-container>
 
-                        <br/>
-                        <div class='row'>
-                            <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect'>
-                                Cadastrar
-                            </button>
-                        </div>
+                        <md-input-container class="md-block">
+                            <label>E-mail</label>
+                            <input md-maxlength="100" md-minlength="10" required type="email" name="email"
+                                      ng-model="usuario.email"
+                                   minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
+
+                            <div ng-messages="projectForm.email.$error" role="alert">
+                                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    Um e-mail tem que se parecer com um e-mail e ter entre 10 e 100 caracteres.
+                                </div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Senha</label>
+                            <input required type="password" name="senha" ng-model="usuario.senha">
+                            <div ng-messages="projectForm.senha.$error">
+                                <div ng-message="required">A senha é requerida.</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Matrícula</label>
+                            <input name="matricula" ng-model="usuario.matricula">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <md-checkbox name="tos" required>
+                                Eu aceito com os termos de serviço.
+                            </md-checkbox>
+                            <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+                                <div ng-message="required">
+                                    Os termos devem ser aceitos.
+                                </div>
+                            </div>
+                        </md-input-container>
+
+
+                </md-card-content>
+
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-disabled="!projectForm.$valid" type="submit" class="md-raised md-primary" ng-click="enviar()">Enviar</md-button>
+                </md-card-actions>
                 </form>
-            </div>
-
+            </md-card>
         </div>
-
-
-        <div class="center-align">
-            <a href="#/login" class="white-text">Já tem uma conta? Logue-se</a>
-        </div>
-
-    </div>
-    <!--</div>-->
-    <!--</div>-->
-    <div class="col s4 offset-s4">
-        <!-- Promo Content 3 goes here -->
-    </div>
-
+    </md-content>
 </main>

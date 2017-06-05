@@ -1,11 +1,11 @@
-<md-content  ng-controller="usuarioLoginCtrl"
-             layout="row" layout-align="space-around"
+<md-content  ng-controller="usuarioLoginCtrl" flex="100"
+             layout="column" layout-align="center center"
              layout-padding="layout-padding" ng-cloak="ng-cloak"
              class="login-form">
-<md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+<md-card flex="50">
     <md-toolbar>
         <div class="md-toolbar-tools">
-            <h2><span>Login Form</span></h2>
+            <h2><span>Backstage login</span></h2>
         </div>
     </md-toolbar>
     <md-card-content>
@@ -29,4 +29,5 @@
         </form>
     </md-card-content>
 </md-card>
+    <a ui-sref="criar-conta">Criar conta!</a>
 </md-content>
