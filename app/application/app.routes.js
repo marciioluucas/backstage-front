@@ -52,6 +52,15 @@ backstageRoutes.run(function ($localStorage, $injector, $timeout) {
                 $state.go('login');
             }
         }
+
+        if($state.current.name === 'login' && typeof $localStorage.usuarioLogado !== 'undefined'){
+            if($localStorage.usuarioLogado.nivel === 1){
+                $state.go('comum.welcome')
+            }
+            if($localStorage.usuarioLogado.nivel > 1) {
+                $state.go('in.dashboard')
+            }
+        }
     });
 
 });
