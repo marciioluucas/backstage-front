@@ -27,7 +27,7 @@ propostaCreateController.controller('propostaCreateCtrl',
             if ($scope.proposta.descricao !== undefined) {
                 params.push("descricao=" + encodeURI($scope.proposta.descricao));
             }
-            params.push("fk_usuario=" + encodeURI(1));
+            params.push("fk_usuario=" + encodeURI($localStorage.usuarioLogado.id));
             propostaFactory.add(params).save()
                 .$promise.then(
                 function (value) {
