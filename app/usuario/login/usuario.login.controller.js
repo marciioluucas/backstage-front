@@ -35,4 +35,10 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
                 });
 
         };
+
+        $scope.deslogar = function () {
+            delete $localStorage.usuarioLogado;
+            $state.go('login');
+            console.log($localStorage)
+        }
     }]);

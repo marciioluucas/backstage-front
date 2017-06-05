@@ -100,3 +100,12 @@ layoutRoutes.config(function ($stateProvider) {
                 }
             });
 });
+
+layoutRoutes.run(['$localStorage','$state', function ($localStorage, $state) {
+    if($state.current.name !== 'login') {
+      if($localStorage.usuarioLogado === 'undefined'){
+          $state.go('login')
+      }
+    }
+
+}]);

@@ -1,8 +1,8 @@
 var backstageRoutes = angular.module('app.routes', ['ui.router']);
-backstageRoutes.config(function ($stateProvider,$locationProvider, $urlRouterProvider) {
+backstageRoutes.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
 
     $locationProvider.hashPrefix('');
-    $urlRouterProvider.otherwise(function($injector) {
+    $urlRouterProvider.otherwise(function ($injector) {
         var $state = $injector.get('$state');
         $state.go('login');
     });
@@ -38,15 +38,20 @@ backstageRoutes.config(function ($stateProvider,$locationProvider, $urlRouterPro
         $stateProvider.state(rotas[i]);
     }
 });
-backstageRoutes.run(['$localStorage','$state', function ($localStorage, $state) {
-    if($state.current.name !== 'login'){
-        console.log($state);
-        if($state.current.parent === 'comum' && $localStorage.usuarioLogado.nivel !== 1){
-            $state.go('login');
-        }
-        if($state.current.parent === 'in.home' && $localStorage.usuarioLogado.nivel < 2){
-            $state.go('login');
-        }
-    }
 
-}]);
+backstageRoutes.run(function ($localStorage, $injector, $timeout) {
+
+    $timeout(function () {
+        var $state = $injector.get('$state');
+        if ($state.current.name !== 'login') {
+            if (typeof $localStorage.usuarioLogado !== 'undefined') {
+                if ($localStorage.usuarioLogado.token === 'undefined') {
+                    $state.go('login');
+                }
+            } else {
+                $state.go('login');
+            }
+        }
+    });
+
+});

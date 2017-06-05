@@ -2,8 +2,9 @@
 var comumRoutes = angular.module('comum.routes', ['ui.router', 'ngRoute']);
 comumRoutes.config(function ($stateProvider, $urlRouterProvider) {
     // $routeProvider.otherwise('/');
-    $urlRouterProvider.otherwise(function() {
-        $stateProvider.state.go('login');
+    $urlRouterProvider.otherwise(function ($injector) {
+        var $state = $injector.get('$state');
+        $state.go('login');
     });
     $stateProvider.state('comum',
         {
@@ -83,9 +84,12 @@ comumRoutes.config(function ($stateProvider, $urlRouterProvider) {
                 }
             })
 });
-comumRoutes.run(function ($localStorage, $injector) {
-    var $state = $injector.get('$state');
-    if($localStorage.token === undefined){
-        $state.go('login');
+
+comumRoutes.run(['$localStorage','$state', function ($localStorage, $state) {
+    if($state.current.name !== 'login') {
+        if($localStorage.usuarioLogado === 'undefined'){
+            $state.go('login')
+        }
     }
-});
+
+}]);

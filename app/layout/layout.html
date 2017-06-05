@@ -1,4 +1,4 @@
-<div layout="row" style="min-height: 100%" ng-controller="layoutCtrl">
+<div layout="row" style="min-height: 100%" ng-controller="layoutCtrl" ng-init="protect()">
     <nav ui-view="layout@sidenav" flex-gt-md="20" style="height: 80%"></nav>
     <section layout="column" flex-gt-md="80">
         <header  layout="row" ng-cloak>
