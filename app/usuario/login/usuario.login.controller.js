@@ -10,7 +10,7 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
 
             usuarioFactory.login(params).login().$promise.then(function (value) {
                     if (value.autenticado === true) {
-                        if($localStorage.usuarioLogado === undefined) {
+                        if ($localStorage.usuarioLogado === undefined) {
                             delete $localStorage.usuarioLogado;
                         }
                         $localStorage.usuarioLogado = {};
@@ -18,10 +18,10 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
                         $localStorage.usuarioLogado.id = parseInt(jwt_decode(value.token).data.pk_usuario);
                         $localStorage.usuarioLogado.nome = jwt_decode(value.token).data.nome;
                         $localStorage.usuarioLogado.nivel = parseInt(jwt_decode(value.token).data.nivel);
-                        if($localStorage.usuarioLogado.nivel === 1){
+                        if ($localStorage.usuarioLogado.nivel === 1) {
                             $state.go('comum.welcome')
                         }
-                        if($localStorage.usuarioLogado.nivel > 1) {
+                        if ($localStorage.usuarioLogado.nivel > 1) {
                             $state.go('in.dashboard')
                         }
                         console.log($localStorage);
@@ -42,3 +42,8 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
             console.log($localStorage)
         }
     }]);
+loginController.config(function ($mdThemingProvider, $mdIconProvider) {
+    $mdThemingProvider.theme('backstage')
+        .primaryPalette('indigo')
+        .accentPalette('green');
+});
