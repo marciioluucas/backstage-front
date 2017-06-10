@@ -1,44 +1,27 @@
-<div class="section"></div>
-<main class="row">
-    <div class="col s12 l4 offset-s4">
-    </div>
-    <div class="col s12 l4">
-        <img class="responsive-img center-block" style="width: 250px;" src="app/dist/imgs/spartan-logo.svg">
-
-        <div class="section"></div>
-
-        <!--<div class="card white darken-1">-->
-        <!--<div class="card-content">-->
-        <h5 class="materialize-red-text center-align">Enviaremos um e-mail para você com sua senha.</h5>
-        <div class="container">
-            <div class="row">
-                <form method="post" >
-                    <div class='row '>
-                        <div class='input-field col s12 '>
-                            <input class='validate grey darken-3' type='email' name='email' id='email'/>
-                            <label for='email' class="">Coloque seu e-mail</label>
-                        </div>
-                    </div>
-                    <br/>
-                    <div class='row'>
-                        <button type='submit' name='btn_esqueci_minha_senha' class='col s12 btn btn-large waves-effect'>
-                            Enviar E-mail
-                        </button>
-                    </div>
-                </form>
+<section layout="row" layout-align="center center" style="background-color: #2d3689; height: 100%;">
+    <md-card flex="100" flex-gt-xs="40" flex-gt-md="30" flex-gt-lg="35" flex-gt-sm="25">
+        <div flex="100" layout="row" layout-align="center center">
+            <img layout-padding="" ng-src="res/screen/android/logo.png" flex="60" class="md-card-image"
+                 alt="Backstage Platform logo">
+        </div>
+        <md-card-content>
+            <div layout="column">
+                <div>
+                    Enviaremos um email para você, caso tenha uma conta.
+                    <form name="Form">
+                        <md-input-container class="md-block">
+                            <label>E-mail</label>
+                            <input type="email" name="login" ng-model="login" placeholder="E-mail" required=""/>
+                            <div ng-messages="Form.email.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Por favor, coloque o e-mail.</div>
+                            </div>
+                        </md-input-container>
+                    </form>
+                </div>
             </div>
-        </div>
-
-
-        <div class="center-align">
-            <a href="#/login" class="white-text">Lembrou a senha? Logue-se</a>
-        </div>
-
-    </div>
-    <!--</div>-->
-    <!--</div>-->
-    <div class="col s4 offset-s4">
-        <!-- Promo Content 3 goes here -->
-    </div>
-
-</main>
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start" class="layout-align-start-stretch layout-column">
+            <md-button ng-disabled="!Form.$valid" class="md-raised md-primary" ng-click="logar">Lembrar!</md-button>
+        </md-card-actions>
+    </md-card>
+</section>

@@ -42,8 +42,3 @@ loginController.controller('usuarioLoginCtrl', ['$scope', '$location',
             console.log($localStorage)
         }
     }]);
-loginController.config(function ($mdThemingProvider, $mdIconProvider) {
-    $mdThemingProvider.theme('backstage')
-        .primaryPalette('indigo')
-        .accentPalette('green');
-});

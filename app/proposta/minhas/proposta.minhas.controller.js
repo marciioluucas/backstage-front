@@ -20,8 +20,8 @@ propostaMinhasController.controller('propostaMinhasCtrl',
             $scope.buscar = function () {
                 $scope.mostrarProgress = true;
                 var params = [];
-                params.push("method=listarUsuarioLogado");
-                params.push("pk_usuario="+$localStorage.usuarioLogado.pk_usuario);
+               params.push("method=listarUsuarioLogado");
+                params.push("fk_usuario="+$localStorage.usuarioLogado.id);
                 if ($scope.nome !== undefined && $scope.nome !== '') {
                     params.push("titulo=" + $scope.nome);
                 }
