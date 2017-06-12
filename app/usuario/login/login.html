@@ -29,8 +29,8 @@
                 </div>
             </md-card-content>
             <md-card-actions layout="column" layout-align="start" class="layout-align-start-stretch layout-column">
-                <md-button ng-disabled="!Form.$valid" class="md-raised md-primary" ng-click="logar">Login</md-button>
-                <md-button class="md-raised md-accent">Cadastrar-se</md-button>
+                <md-button ng-disabled="!Form.$valid" class="md-raised md-primary" ng-click="logar()">Login</md-button>
+                <md-button class="md-raised md-accent" ui-sref="criar-conta">Cadastrar-se</md-button>
             </md-card-actions>
         </md-card>
     </section>
