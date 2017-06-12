@@ -7,10 +7,10 @@
             <md-card-content>
                 <div layout="column">
                     <div>
-                        <form name="Form">
+                        <form name="Form" ng-submit="logar()">
                             <md-input-container class="md-block">
                                 <label>E-mail</label>
-                                <input type="email" name="login" ng-model="login" placeholder="E-mail" required=""/>
+                                <input autofocus type="email" name="login" ng-model="login" placeholder="E-mail" required=""/>
                                 <div ng-messages="Form.email.$error" role="alert" multiple="">
                                     <div ng-message="required" class="my-message">Por favor, coloque o e-mail.</div>
                                 </div>
@@ -29,7 +29,7 @@
                 </div>
             </md-card-content>
             <md-card-actions layout="column" layout-align="start" class="layout-align-start-stretch layout-column">
-                <md-button ng-disabled="!Form.$valid" class="md-raised md-primary" ng-click="logar()">Login</md-button>
+                <md-button ng-disabled="!Form.$valid" class="md-raised md-primary">Login</md-button>
                 <md-button class="md-raised md-accent" ui-sref="criar-conta">Cadastrar-se</md-button>
             </md-card-actions>
         </md-card>

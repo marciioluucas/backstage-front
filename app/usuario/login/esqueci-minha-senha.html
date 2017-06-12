@@ -4,24 +4,26 @@
             <img layout-padding="" ng-src="res/screen/android/logo.png" flex="60" class="md-card-image"
                  alt="Backstage Platform logo">
         </div>
-        <md-card-content>
-            <div layout="column">
-                <div>
-                    Enviaremos um email para você, caso tenha uma conta.
-                    <form name="Form">
+        <form name="Form" ng-submit="lembrar()">
+            <md-card-content>
+                <div layout="column">
+                    <div>
+                        Enviaremos um email para você, caso tenha uma conta.
+
                         <md-input-container class="md-block">
                             <label>E-mail</label>
-                            <input type="email" name="login" ng-model="login" placeholder="E-mail" required=""/>
+                            <input autofocus type="email" name="login" ng-model="login" placeholder="E-mail"
+                                   required=""/>
                             <div ng-messages="Form.email.$error" role="alert" multiple="">
                                 <div ng-message="required" class="my-message">Por favor, coloque o e-mail.</div>
                             </div>
                         </md-input-container>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </md-card-content>
-        <md-card-actions layout="column" layout-align="start" class="layout-align-start-stretch layout-column">
-            <md-button ng-disabled="!Form.$valid" class="md-raised md-primary" ng-click="logar">Lembrar!</md-button>
-        </md-card-actions>
+            </md-card-content>
+            <md-card-actions layout="column" layout-align="start" class="layout-align-start-stretch layout-column">
+                <md-button ng-disabled="!Form.$valid" class="md-raised md-primary">Lembrar!</md-button>
+            </md-card-actions>
+        </form>
     </md-card>
 </section>

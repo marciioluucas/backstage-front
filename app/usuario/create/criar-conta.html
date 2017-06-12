@@ -1,68 +1,73 @@
-<section ng-controller="usuarioCreateCtrl" layout="row" layout-align="center center" style="background-color: #2d3689; height: 100%;">
+<section ng-controller="usuarioCreateCtrl" layout="row" layout-align="center center"
+         style="background-color: #2d3689; height: 100%;">
     <md-card flex="100" flex-gt-xs="40" flex-gt-md="30" flex-gt-lg="35" flex-gt-sm="25">
         <div flex="100" layout="row" layout-align="center center">
             <img layout-padding="" ng-src="res/screen/android/logo.png" flex="60" class="md-card-image"
                  alt="Backstage Platform logo">
         </div>
-        <md-card-content>
-            <div layout="column">
-                <div>
-                    <md-input-container class="md-block">
-                        <label>Nome</label>
-                        <input md-maxlength="80" required name="nome" ng-model="usuario.nome">
-                        <div ng-messages="projectForm.nome.$error">
-                            <div ng-message="required">O nome é requirido.</div>
-                            <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
-                        </div>
-                    </md-input-container>
+        <form name="projectForm" ng-submit="enviar()">
 
-                    <md-input-container class="md-block">
-                        <label>E-mail</label>
-                        <input md-maxlength="100" md-minlength="10" required type="email" name="email"
-                               ng-model="usuario.email"
-                               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
-
-                        <div ng-messages="projectForm.email.$error" role="alert">
-                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-                                Um e-mail tem que se parecer com um e-mail e ter entre 10 e 100 caracteres.
+            <md-card-content>
+                <div layout="column">
+                    <div>
+                        <md-input-container class="md-block">
+                            <label>Nome</label>
+                            <input autofocus md-maxlength="80" required name="nome" ng-model="usuario.nome">
+                            <div ng-messages="projectForm.nome.$error">
+                                <div ng-message="required">O nome é requirido.</div>
+                                <div ng-message="md-maxlength">O nome não pode conter mais que 80 caracteres.</div>
                             </div>
-                        </div>
-                    </md-input-container>
+                        </md-input-container>
 
-                    <md-input-container class="md-block">
-                        <label>Senha</label>
-                        <input required type="password" name="senha" ng-model="usuario.senha">
-                        <div ng-messages="projectForm.senha.$error">
-                            <div ng-message="required">A senha é requerida.</div>
-                        </div>
-                    </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>E-mail</label>
+                            <input md-maxlength="100" md-minlength="10" required type="email" name="email"
+                                   ng-model="usuario.email"
+                                   minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
 
-                    <md-input-container class="md-block">
-                        <label>Matrícula</label>
-                        <input name="matricula" ng-model="usuario.matricula">
-                    </md-input-container>
-
-                    <md-input-container class="md-block">
-                        <md-checkbox name="tos" required>
-                            Eu aceito com os termos de serviço.
-                        </md-checkbox>
-                        <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
-                            <div ng-message="required">
-                                Os termos devem ser aceitos.
+                            <div ng-messages="projectForm.email.$error" role="alert">
+                                <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                    Um e-mail tem que se parecer com um e-mail e ter entre 10 e 100 caracteres.
+                                </div>
                             </div>
-                        </div>
-                    </md-input-container>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Senha</label>
+                            <input required type="password" name="senha" ng-model="usuario.senha">
+                            <div ng-messages="projectForm.senha.$error">
+                                <div ng-message="required">A senha é requerida.</div>
+                            </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <label>Matrícula</label>
+                            <input name="matricula" ng-model="usuario.matricula">
+                        </md-input-container>
+
+                        <md-input-container class="md-block">
+                            <md-checkbox name="tos" required>
+                                Eu aceito com os termos de serviço.
+                            </md-checkbox>
+                            <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+                                <div ng-message="required">
+                                    Os termos devem ser aceitos.
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
                 </div>
-            </div>
 
 
-        </md-card-content>
+            </md-card-content>
 
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-disabled="!projectForm.$valid" type="submit" class="md-raised md-primary" ng-click="enviar()">
-                Enviar
-            </md-button>
-        </md-card-actions>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-disabled="!projectForm.$valid" type="submit" class="md-raised md-primary"
+                           >
+                    Enviar
+                </md-button>
+            </md-card-actions>
 
+        </form>
     </md-card>
 </section>
